@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hiram Ramírez's portfolio projects, including commercial and personal ventures in Python and web development.">
+    <meta name="keywords" content="Hiram Ramírez, Backend Developer, Python Projects, Web Development Projects, Commercial Projects, Personal Projects">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Hiram Ramírez - Projects</title>
+</head>
+
+<body>
+    <header data-aos="fade-down">
+        <h1>Projects</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects" data-aos="fade-up">
+        <h2>My Work</h2>
+        <div class="project project-highlight" data-aos="fade-right">
+            <h3>Image Thread Generator <span class="highlight-badge">Proudest Work</span></h3>
+            <p class="project-subtitle"><em>This personal entrepreneurial project is currently in user testing,
+                    receiving feedback to refine its features and
+                    generate additional passive income.</em></p>
+            <a href="hilos.html">Learn more</a>
+        </div>
+        <div class="project project-highlight" data-aos="fade-left">
+            <h3>Student registration, payment and exam control <span class="highlight-badge commercial">Commercial
+                    Project</span></h3>
+            <p class="project-subtitle"><em>This project has been sold to real clients and generates monthly recurring
+                    revenue.</em></p>
+            <a href="student_registration.html">Learn more</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Hiram Ramírez. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTopBtn" title="Go to top">&#9650;</button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top button functionality
+        const backToTopBtn = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.addEventListener('click', function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
+</body>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

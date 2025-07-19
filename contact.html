@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Hiram Ramírez, a Backend Developer specializing in Python and web technologies. Get in touch for collaborations or opportunities.">
+    <meta name="keywords" content="Hiram Ramírez, Backend Developer, Contact, Email, Phone, LinkedIn, GitHub">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Hiram Ramírez - Contact</title>
+</head>
+<body>
+    <header data-aos="fade-down">
+        <h1>Contact Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact-info" data-aos="fade-up">
+        <h2>Get in Touch</h2>
+        <ul class="contact-list" data-aos="fade-right">
+            <li><strong>Phone:</strong> (+52) 2221033301</li>
+            <li><strong>Email:</strong> <a href="mailto:hiram.j.ramirez@gmail.com">hiram.j.ramirez@gmail.com</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/hiramramirez" target="_blank">linkedin.com/in/hiramramirez</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/HiramRamirezR" target="_blank">github.com/HiramRamirezR</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 - Hiram Ramírez. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

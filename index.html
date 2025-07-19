@@ -1,42 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Hiram Ramírez - Backend Developer specializing in Python and web technologies. Explore my resume, projects, and contact information.">
+    <meta name="keywords"
+        content="Hiram Ramírez, Backend Developer, Python, JavaScript, FastAPI, Web Development, Automation, Portfolio, Resume">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Hiram Ramírez</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Hiram Ramírez - Backend Developer</title>
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to my Portfolio</h1>
+    <header data-aos="fade-down">
+        <h1>Hiram Ramírez - Python Developer</h1>
         <nav>
             <ul>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="welcome">
-        <h2>Hi, my name is Hiram.</h2>
-        <p>I'm a Python and JavaScript developer.</p>
+    <section id="resume" data-aos="fade-up">
+        <div class="resume-section" data-aos="fade-right">
+            <h2>Summary</h2>
+            <p>Backend developer with experience in Python, focusing on web development and automation. Bilingual
+                (Spanish-English) and committed to continuous learning and improvement. Seeking remote opportunities,
+                contribute to impactful projects, and continue enhancing skills in Python and web technologies.</p>
+        </div>
+
+        <div class="resume-section" data-aos="fade-left">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>Python (Backend Development & Scripting)</li>
+                <li>Web Development with FastAPI</li>
+                <li>JavaScript (Frontend fundamentals)</li>
+                <li>MongoDB, Express, React, Node.js (Basic MERN stack)</li>
+                <li>Ruby on Rails (Basic Fullstack Projects)</li>
+                <li>Version Control with Git & GitHub</li>
+                <li>Cloud Deployment (Railway, Render)</li>
+                <li>Basic Testing (unit/integration)</li>
+                <li>Working with JSON, APIs, and webhooks</li>
+            </ul>
+        </div>
+
+        <div class="resume-section" data-aos="fade-right">
+            <h2>Experience</h2>
+            <div class="job">
+                <h3>Python Developer</h3>
+                <p><strong>Mighty studio (Mexico)</strong> | November 2022 - Present</p>
+                <ul>
+                    <li>Developed and maintained backend services using Python.</li>
+                    <li>Provided support for pipeline automation, improving workflow efficiency.</li>
+                    <li>Collaborated with teams to troubleshoot and debug production issues.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="resume-section" data-aos="fade-left">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Fullstack Rails Developer</h3>
+                <p><strong>Le Wagon</strong> | July 2022 - September 2022</p>
+            </div>
+            <div class="education-item">
+                <h3>Fullstack MERN Developer</h3>
+                <p><strong>Kodemia</strong> | August 2021 - April 2022</p>
+            </div>
+            <div class="education-item">
+                <h3>Animation</h3>
+                <p><strong>Universidad de Artes Digitales</strong> | January 2011 - December 2013</p>
+            </div>
+        </div>
+
+        <div class="resume-section" data-aos="fade-right">
+            <h2>Languages</h2>
+            <p>English (Bilingual), Spanish (Native)</p>
+        </div>
+
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <span class="project-img">
-            <a href="https://control-alumnos.netlify.app/" target="_blank"><img src="img/control de alumnos.jpg" alt=""></a>
-            <p>Student registration</p>
-        </span>
-    </section>
-
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>Puedes contactarme a través de [tu correo electrónico] o seguirme en mis redes sociales.</p>
+    <section id="call-to-action" data-aos="zoom-in">
+        <h2>Ready to see my work?</h2>
+        <a href="projects.html" class="cta-button">View My Projects</a>
+        <a href="contact.html" class="cta-button secondary">Contact Me</a>
     </section>
 
     <footer>
-        <p>&copy; 2024 - Hiram Ramírez. Todos los derechos reservados.</p>
+        <p>&copy; 2025 - Hiram Ramírez. All rights reserved.</p>
     </footer>
+
+    <button id="backToTopBtn" title="Go to top">&#9650;</button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to Top button functionality
+        const backToTopBtn = document.getElementById("backToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+
+        backToTopBtn.addEventListener('click', function() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+    </script>
 </body>
+
 </html>
