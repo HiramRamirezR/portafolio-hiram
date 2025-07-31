@@ -36,17 +36,28 @@
 
         <div class="resume-section" data-aos="fade-left">
             <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python (Backend Development & Scripting)</li>
-                <li>Web Development with FastAPI</li>
-                <li>JavaScript (Frontend fundamentals)</li>
-                <li>MongoDB, Express, React, Node.js (Basic MERN stack)</li>
-                <li>Ruby on Rails (Basic Fullstack Projects)</li>
-                <li>Version Control with Git & GitHub</li>
-                <li>Cloud Deployment (Railway, Render)</li>
-                <li>Basic Testing (unit/integration)</li>
-                <li>Working with JSON, APIs, and webhooks</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-card">🐍 Python</div>
+                <div class="skill-card">🌿 Git</div>
+                <div class="skill-card">🐙 GitHub</div>
+                <div class="skill-card">🚀 FastAPI</div>
+                <div class="skill-card">✨ Pydantic</div>
+                <div class="skill-card">🌐 HTTP</div>
+                <div class="skill-card">🐘 PostgreSQL</div>
+                <div class="skill-card">🧪 SQLAlchemy</div>
+                <div class="skill-card">📄 JSON</div>
+                <div class="skill-card">🤖 OpenAI</div>
+                <div class="skill-card">🔑 dotenv</div>
+                <div class="skill-card">🐳 Docker</div>
+                <div class="skill-card">☁️ Deployment</div>
+                <div class="skill-card">🔬 pytest</div>
+                <div class="skill-card">⚙️ CI/CD</div>
+                <div class="skill-card">📜 JavaScript</div>
+                <div class="skill-card">📄 HTML</div>
+                <div class="skill-card">🎨 CSS</div>
+                <div class="skill-card">🔄 Agile</div>
+                <div class="skill-card">🗣️ English</div>
+            </div>
         </div>
 
         <div class="resume-section" data-aos="fade-right">
@@ -115,7 +126,7 @@
         // Back to Top button functionality
         const backToTopBtn = document.getElementById("backToTopBtn");
 
-        window.onscroll = function() {
+        window.onscroll = function () {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 backToTopBtn.style.display = "block";
             } else {
@@ -123,7 +134,7 @@
             }
         };
 
-        backToTopBtn.addEventListener('click', function() {
+        backToTopBtn.addEventListener('click', function () {
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         });
