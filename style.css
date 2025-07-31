@@ -134,6 +134,11 @@ section h2 {
     color: #121212;
 }
 
+.highlight-badge.personal {
+    background-color: #28a745;
+    color: #fff;
+}
+
 .project-subtitle {
     font-size: 0.95rem;
     color: #bbb;
