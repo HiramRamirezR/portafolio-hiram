@@ -142,10 +142,8 @@ section h2 {
 
 .subtitle {
     color: #00aaff;
-}
-
-.subtitle {
-    color: #00aaff;
+    font-size: large;
+    min-height: 3rem; /* To prevent layout shift during typewriter effect */
 }
 
 /* Contact Section */
