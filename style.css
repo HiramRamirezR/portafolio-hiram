@@ -394,3 +394,13 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+.profile-image {
+    display: block;
+    margin: 2rem auto; /* Added margin-top and margin-bottom for spacing */
+    border: 2px solid #00aaff;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.3); /* Blue shadow */
+    max-width: 100%; /* Ensure responsiveness */
+    height: auto; /* Maintain aspect ratio */
+}
