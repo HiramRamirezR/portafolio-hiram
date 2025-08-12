@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Animated Subtitle
+// Animated Subtitle with Typewriter and Erase Effect
 document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('animated-subtitle');
     if (subtitleElement) {
@@ -112,30 +112,71 @@ document.addEventListener('DOMContentLoaded', () => {
             "Open to remote work opportunities."
         ];
         let currentPhraseIndex = 0;
+        let typingTimeout;
+        let erasingTimeout;
+        let cycleInterval;
 
-        const typeWriterEffect = (element, text, delay = 50) => {
+        // Create cursor element
+        const cursorSpan = document.createElement('span');
+        cursorSpan.classList.add('typewriter-cursor');
+        cursorSpan.textContent = '|'; // Use a pipe character for visibility
+
+        const typeWriterEffect = (element, text, charDelay = 50, callback) => {
             let i = 0;
             element.textContent = ''; // Clear existing text
-            const typingInterval = setInterval(() => {
+            element.appendChild(cursorSpan); // Append cursor
+
+            const type = () => {
                 if (i < text.length) {
-                    element.textContent += text.charAt(i);
+                    element.textContent = text.substring(0, i + 1);
+                    element.appendChild(cursorSpan); // Keep cursor at the end
                     i++;
+                    typingTimeout = setTimeout(type, charDelay);
                 } else {
-                    clearInterval(typingInterval);
+                    // Typing complete, call callback if provided
+                    if (callback) callback();
                 }
-            }, delay);
+            };
+            type();
         };
 
-        const updateSubtitle = () => {
-            const phrase = phrases[currentPhraseIndex];
-            typeWriterEffect(subtitleElement, phrase); // Use typewriter effect
-            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        const eraseEffect = (element, charDelay = 30, callback) => {
+            let i = element.textContent.length - 1; // Start from end of text
+            // Remove cursor temporarily for erasing animation
+            if (element.lastChild === cursorSpan) {
+                element.removeChild(cursorSpan);
+            }
+
+            const erase = () => {
+                if (i >= 0) {
+                    element.textContent = element.textContent.substring(0, i);
+                    element.appendChild(cursorSpan); // Keep cursor at the end of remaining text
+                    i--;
+                    erasingTimeout = setTimeout(erase, charDelay);
+                } else {
+                    // Erasing complete, call callback if provided
+                    if (callback) callback();
+                }
+            };
+            erase();
         };
 
-        // Initial display
-        updateSubtitle();
+        const startAnimationCycle = () => {
+            const currentPhrase = phrases[currentPhraseIndex];
 
-        // Change subtitle every 4 seconds (adjust time as needed)
-        setInterval(updateSubtitle, 4000); // 4000ms = 4 seconds
+            typeWriterEffect(subtitleElement, currentPhrase, 50, () => {
+                // After typing, wait for a moment, then erase
+                typingTimeout = setTimeout(() => {
+                    eraseEffect(subtitleElement, 30, () => {
+                        // After erasing, move to next phrase and start typing again
+                        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                        cycleInterval = setTimeout(startAnimationCycle, 500); // Short delay before next phrase types
+                    });
+                }, 2000); // Display typed text for 2 seconds
+            });
+        };
+
+        // Initial start
+        startAnimationCycle();
     }
 });
