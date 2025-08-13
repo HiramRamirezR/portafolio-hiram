@@ -22,9 +22,12 @@ window.onscroll = function () {
     }
 };
 
-backToTopBtn.addEventListener('click', function () {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+backToTopBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
 
 // Skills carousel auto-scroll and line animation
@@ -107,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('animated-subtitle');
     if (subtitleElement) {
         const phrases = [
-            "Backend developer with 3 years of experience in Python.",
+            "3 years of experience in Python.",
             "Bilingual (Spanish-English).",
             "Open to remote work opportunities."
         ];
