@@ -475,17 +475,6 @@ h2 {
     /* Smooth transition for width change */
 }
 
-/* Responsive adjustments for intro section */
-@media (max-width: 768px) {
-    #intro-section {
-        /* No flex-direction or text-align needed here, handled by #intro-skills */
-    }
-
-    .profile-image {
-        /* Margin already handled above */
-    }
-}
-
 /* Skills Carousel Styles */
 .skills-carousel {
     overflow-x: scroll;
@@ -567,12 +556,12 @@ h2 {
 }
 
 .syntax-keyword {
-    color: #ed0707;
+    color: #9c003e;
     /* Light blue */
 }
 
 .syntax-string {
-    color: #ecf14f;
+    color: #d4db18;
     /* Light brown/orange */
 }
 
