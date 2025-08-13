@@ -110,16 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('animated-subtitle');
     if (subtitleElement) {
         const phrases = `
-try:
-    def profile():
-        experience(years=3, language="Python")
-        speak(["Spanish", "English"])
-        open_to("remote_work")
+<span class="syntax-keyword">try</span>:
+    <span class="syntax-keyword">def</span> <span class="syntax-function">profile</span>():
+        <span class="syntax-function">experience</span>(years = <span class="syntax-number">3</span>, language = <span class="syntax-string">"Python"</span>)
+        <span class="syntax-function">speak</span>([<span class="syntax-string">"Spanish"</span>, <span class="syntax-string">"English"</span>])
+        <span class="syntax-function">open_to</span>(<span class="syntax-string">"remote_work"</span>)
 
-    profile()
-except Exception:
-    print("""Not defined yet...
-just like our working relationship 😉""")
+    <span class="syntax-function">profile</span>()
+<span class="syntax-keyword">except</span> <span class="syntax-builtin">Exception</span>:
+    <span class="syntax-function">print</span>(<span class="syntax-string">"""Not defined yet...</span>
+<span class="syntax-string">just like our working relationship 😉"""</span>)
 `;
 
         let typingTimeout;
@@ -135,7 +135,7 @@ just like our working relationship 😉""")
                 return;
             }
 
-            let i = 0;
+            let i = 0; // This will be the index in the *visible* text
             const line = lines[lineIndex];
             const isFirstLine = lineIndex === 0;
 
@@ -143,15 +143,35 @@ just like our working relationship 😉""")
                 element.innerHTML += '<br>';
             }
 
-            // Get current content to preserve it
             const currentContent = element.innerHTML.replace(/<span class="typewriter-cursor">[^<]*<\/span>/, '');
 
-
             const type = () => {
-                if (i < line.length) {
-                    element.innerHTML = currentContent + line.substring(0, i + 1);
+                // Find the corresponding HTML substring that contains 'i' visible characters
+                let htmlToRender = '';
+                let visibleCharCount = 0;
+                let rawCharIndex = 0;
+
+                while (visibleCharCount <= i && rawCharIndex < line.length) {
+                    const char = line[rawCharIndex];
+                    if (char === '<') {
+                        // Skip HTML tag
+                        while (rawCharIndex < line.length && line[rawCharIndex] !== '>') {
+                            htmlToRender += line[rawCharIndex];
+                            rawCharIndex++;
+                        }
+                        htmlToRender += '>'; // Include the closing '>'
+                        rawCharIndex++;
+                    } else {
+                        htmlToRender += char;
+                        visibleCharCount++;
+                        rawCharIndex++;
+                    }
+                }
+
+                if (i < visibleCharCount) { // Only proceed if there are more visible characters to type
+                    element.innerHTML = currentContent + htmlToRender;
                     element.appendChild(cursorSpan);
-                    i++;
+                    i++; // Increment visible character index
                     typingTimeout = setTimeout(type, charDelay);
                 } else {
                     // Typing of current line complete, move to next line

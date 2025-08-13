@@ -559,3 +559,24 @@ h2 {
 .social-links a:hover {
     color: #00aaff;
 }
+
+/* Syntax Highlighting for Subtitle */
+.syntax-number {
+    color: #ff7300;
+    /* Orange */
+}
+
+.syntax-keyword {
+    color: #ed0707;
+    /* Light blue */
+}
+
+.syntax-string {
+    color: #ecf14f;
+    /* Light brown/orange */
+}
+
+.syntax-comment {
+    color: #6a9955;
+    /* Green */
+}
