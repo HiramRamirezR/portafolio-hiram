@@ -110,10 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('animated-subtitle');
     if (subtitleElement) {
         const phrases = `
-def profile():
-    experience(years=3, language="Python")
-    speak(["Native Spanish", "English C1"])
-    open_to("remote_work")
+try:
+    def profile():
+        experience(years=3, language="Python")
+        speak(["Spanish", "English"])
+        open_to("remote_work")
+
+    profile()
+except Exception:
+    print("""Not defined yet...
+just like our working relationship 😉""")
 `;
 
         let typingTimeout;

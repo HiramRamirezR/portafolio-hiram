@@ -144,7 +144,7 @@ section h2 {
 
 .subtitle {
     color: #00aaff;
-    font-size: large;
+    font-size: .9em;
     font-family: 'Roboto Mono', monospace;
     text-shadow: 0 0 8px rgba(0, 170, 255, 0.7);
 }
@@ -536,8 +536,8 @@ h2 {
 #intro-header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    height: 200px;
 }
 
 .profile-image {
