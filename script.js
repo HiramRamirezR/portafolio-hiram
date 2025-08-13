@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phrases = `
 def profile():
     experience(years=3, language="Python")
-    speak(["Spanish", "English"])
+    speak(["Native Spanish", "English C1"])
     open_to("remote_work")
 `;
 
