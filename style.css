@@ -166,6 +166,10 @@ footer {
     margin-bottom: 2.5rem;
 }
 
+h2 {
+    color: #00aaff;
+}
+
 .resume-section h2 {
     color: #00aaff;
     border-bottom: 2px solid #00aaff;

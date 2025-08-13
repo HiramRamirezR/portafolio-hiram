@@ -110,9 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('animated-subtitle');
     if (subtitleElement) {
         const phrases = [
-            "3 years of experience in Python.",
-            "Bilingual (Spanish-English).",
-            "Open to remote work opportunities."
+            'def profile():',
+            '    experience(years=3, language="Python")',
+            '    speak(["Spanish", "English"])',
+            '    open_to("remote_work")'
         ];
         let currentPhraseIndex = 0;
         let typingTimeout;
