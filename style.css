@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 /* General Styles */
 html,
 body {
@@ -143,8 +145,8 @@ section h2 {
 .subtitle {
     color: #00aaff;
     font-size: large;
-    min-height: 3rem;
-    /* To prevent layout shift during typewriter effect */
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: 0 0 8px rgba(0, 170, 255, 0.7);
 }
 
 /* Contact Section */
@@ -529,4 +531,15 @@ h2 {
     }
 
     /* Scroll full width of the grid */
+}
+
+#intro-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image {
+    margin-right: 2rem;
 }

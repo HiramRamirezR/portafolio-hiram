@@ -109,73 +109,60 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const subtitleElement = document.getElementById('animated-subtitle');
     if (subtitleElement) {
-        const phrases = [
-            'def profile():',
-            '    experience(years=3, language="Python")',
-            '    speak(["Spanish", "English"])',
-            '    open_to("remote_work")'
-        ];
-        let currentPhraseIndex = 0;
+        const phrases = `
+def profile():
+    experience(years=3, language="Python")
+    speak(["Spanish", "English"])
+    open_to("remote_work")
+`;
+
         let typingTimeout;
-        let erasingTimeout;
-        let cycleInterval;
 
         // Create cursor element
         const cursorSpan = document.createElement('span');
         cursorSpan.classList.add('typewriter-cursor');
         cursorSpan.textContent = '|'; // Use a pipe character for visibility
 
-        const typeWriterEffect = (element, text, charDelay = 50, callback) => {
+        const typeWriterEffect = (element, lines, lineIndex, charDelay, callback) => {
+            if (lineIndex >= lines.length) {
+                if (callback) callback();
+                return;
+            }
+
             let i = 0;
-            element.textContent = ''; // Clear existing text
-            element.appendChild(cursorSpan); // Append cursor
+            const line = lines[lineIndex];
+            const isFirstLine = lineIndex === 0;
+
+            if (!isFirstLine) {
+                element.innerHTML += '<br>';
+            }
+
+            // Get current content to preserve it
+            const currentContent = element.innerHTML.replace(/<span class="typewriter-cursor">[^<]*<\/span>/, '');
+
 
             const type = () => {
-                if (i < text.length) {
-                    element.textContent = text.substring(0, i + 1);
-                    element.appendChild(cursorSpan); // Keep cursor at the end
+                if (i < line.length) {
+                    element.innerHTML = currentContent + line.substring(0, i + 1);
+                    element.appendChild(cursorSpan);
                     i++;
                     typingTimeout = setTimeout(type, charDelay);
                 } else {
-                    // Typing complete, call callback if provided
-                    if (callback) callback();
+                    // Typing of current line complete, move to next line
+                    typeWriterEffect(element, lines, lineIndex + 1, charDelay, callback);
                 }
             };
             type();
         };
 
-        const eraseEffect = (element, charDelay = 30, callback) => {
-            let i = element.textContent.length - 1; // Start from end of text
-            // Remove cursor temporarily for erasing animation
-            if (element.lastChild === cursorSpan) {
-                element.removeChild(cursorSpan);
-            }
-
-            const erase = () => {
-                if (i >= 0) {
-                    element.textContent = element.textContent.substring(0, i);
-                    element.appendChild(cursorSpan); // Keep cursor at the end of remaining text
-                    i--;
-                    erasingTimeout = setTimeout(erase, charDelay);
-                } else {
-                    // Erasing complete, call callback if provided
-                    if (callback) callback();
-                }
-            };
-            erase();
-        };
-
         const startAnimationCycle = () => {
-            const currentPhrase = phrases[currentPhraseIndex];
-
-            typeWriterEffect(subtitleElement, currentPhrase, 50, () => {
-                // After typing, wait for a moment, then erase
+            subtitleElement.innerHTML = ''; // Clear previous content
+            const lines = phrases.split('\n').filter(line => line.trim().length > 0);
+            typeWriterEffect(subtitleElement, lines, 0, 50, () => {
+                // After typing all lines, wait, then restart
                 typingTimeout = setTimeout(() => {
-                    eraseEffect(subtitleElement, 30, () => {
-                        // After erasing, move to next phrase and start typing again
-                        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                        cycleInterval = setTimeout(startAnimationCycle, 500); // Short delay before next phrase types
-                    });
+                    subtitleElement.innerHTML = ''; // Disappear
+                    setTimeout(startAnimationCycle, 500); // Restart
                 }, 2000); // Display typed text for 2 seconds
             });
         };
