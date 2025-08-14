@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 typingTimeout = setTimeout(() => {
                     subtitleElement.innerHTML = ''; // Disappear
                     setTimeout(startAnimationCycle, 500); // Restart
-                }, 2000); // Display typed text for 2 seconds
+                }, 4000); // Display typed text for 2 seconds
             });
         };
 
