@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     hasTag = true;
                 } else if (filter === 'personal' && personalBadge) {
                     hasTag = true;
+                } else if (filter === 'html-css') {
+                    if (tags.includes('html') || tags.includes('css')) {
+                        hasTag = true;
+                    }
                 } else if (tags.includes(filter)) {
                     hasTag = true;
                 }
