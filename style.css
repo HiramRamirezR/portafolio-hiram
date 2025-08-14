@@ -593,3 +593,27 @@ h2 {
     font-size: 12px;
     margin-right: 5px;
 }
+
+#filter-menu {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+    background-color: #555;
+}
+
+.filter-button.active {
+    background-color: #00aaff;
+}
