@@ -446,27 +446,14 @@ h2 {
 }
 
 #intro-skills h2 {
-    position: relative;
-    /* For positioning the pseudo-element */
-    padding-bottom: 0.8rem;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
     width: 100%;
-    /* Make the line span full width */
 }
 
-#intro-skills h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background-color: #00aaff;
-    width: var(--line-width, 0%);
-    /* Use CSS variable for animated width */
-    transition: width 0.1s linear;
-    /* Smooth transition for width change */
-}
+
 
 /* Skills Carousel Styles */
 .skills-carousel {
