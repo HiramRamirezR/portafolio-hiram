@@ -425,6 +425,7 @@ h2 {
     /* Rounded corners */
     box-shadow: 0 0 15px rgba(0, 170, 255, 0.3);
     /* Blue shadow */
+    margin-right: 2rem;
 }
 
 /* Intro Section Styles */
@@ -521,14 +522,25 @@ h2 {
 
 #intro-header {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-    height: 200px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-.profile-image {
+.image-container {
+    flex-shrink: 0;
     margin-right: 2rem;
 }
+
+.subtitle-container {
+    flex-grow: 1;
+    overflow: hidden;
+    width: 400px;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 300px;
+}
+
+
 
 .social-links {
     margin-top: 1rem;
