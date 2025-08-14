@@ -529,13 +529,13 @@ h2 {
 
 .image-container {
     flex-shrink: 0;
-    margin-right: 2rem;
+    /* margin-right: 2rem; */
 }
 
 .subtitle-container {
     flex-grow: 1;
     overflow: hidden;
-    width: 400px;
+    width: 430px;
     margin-top: 0;
     margin-bottom: 0;
     height: 300px;
