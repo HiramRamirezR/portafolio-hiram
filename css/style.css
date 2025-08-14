@@ -617,3 +617,9 @@ h2 {
 .filter-button.active {
     background-color: #00aaff;
 }
+
+.filter-description {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
