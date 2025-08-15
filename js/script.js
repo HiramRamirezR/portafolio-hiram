@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (skillsCarousel && skillsGrid && skillsH2) {
         let scrollAmount = 0;
         let animationFrameId;
-        const scrollSpeed = 0.5; // Adjust scroll speed as needed
+        const scrollSpeed = 10; // Adjust scroll speed as needed
 
         // Duplicate content for seamless loop
         skillsGrid.innerHTML += skillsGrid.innerHTML;

@@ -475,7 +475,7 @@ h2 {
 .skills-carousel .skills-track {
     display: flex;
     flex-wrap: nowrap;
-    animation: scrollSkills 40s linear infinite;
+    animation: scrollSkills 20s linear infinite;
 }
 
 .skills-carousel:hover .skills-grid {
@@ -493,7 +493,7 @@ h2 {
 }
 
 .skills-carousel .skills-row:nth-child(2) .skills-track {
-    animation: scrollSkills2 40s linear infinite;
+    animation: scrollSkills2 20s linear infinite;
 }
 
 /* Keyframe animation for skills carousel */
