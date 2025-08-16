@@ -481,7 +481,6 @@ h2 {
 #intro-section {
     padding: 3rem 2rem;
     margin: 2rem auto;
-    width: 85%;
     background: #1f1f1f;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -669,4 +668,56 @@ h2 {
     text-align: center;
     margin-bottom: 1rem;
     color: #ccc;
+}
+
+@media (max-width: 768px) {
+    header,
+    footer,
+    section {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+
+    #intro-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .cta-button {
+        display: block;
+        margin: 0.5rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+
+    .project {
+        padding: 1rem;
+    }
+
+    .project h3 {
+        font-size: 1.2rem;
+    }
+
+    #call-to-action {
+        padding: 2rem 1rem;
+    }
+
+    .subtitle {
+        font-size: 0.7em;
+    }
 }
