@@ -17,14 +17,21 @@
 
 <body>
     <header>
-        <h1>Projects</h1>
-        <nav>
+    <div class="container">
+        <div class="header-content">
+            <h1>Projects</h1>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <section id="projects">
         <h2>My Work</h2>
@@ -165,7 +172,7 @@
     <button id="backToTopBtn" title="Go to top">&#9650;</button>
 
     <script src="js/projectFilter.js"></script>
-
+    <script src="js/hamburger.js"></script>
 </body>
 
 </html>

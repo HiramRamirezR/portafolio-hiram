@@ -17,15 +17,22 @@
 
 <body>
     <header data-aos="fade-down">
-        <h1>Hiram Ramírez - Backend Developer</h1>
-        <nav>
+    <div class="container">
+        <div class="header-content">
+            <h1>Hiram Ramírez - Backend Developer</h1>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <nav class="main-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
     <section id="intro-section">
         <div id="intro-skills" data-aos="zoom-in">
@@ -160,6 +167,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
     <script src="js/writingEffect.js"></script>
+    <script src="js/hamburger.js"></script>
 </body>
 
 </html>
