@@ -14,21 +14,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Back to Top button functionality
 const backToTopBtn = document.getElementById("backToTopBtn");
 
-window.onscroll = function () {
+window.addEventListener('scroll', () => {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        backToTopBtn.style.display = "block";
+        if(backToTopBtn) backToTopBtn.style.display = "block";
     } else {
-        backToTopBtn.style.display = "none";
+        if(backToTopBtn) backToTopBtn.style.display = "none";
     }
-};
-
-backToTopBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 });
+
+if(backToTopBtn) {
+    backToTopBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
 
 // Skills carousel auto-scroll and line animation
 document.addEventListener('DOMContentLoaded', () => {

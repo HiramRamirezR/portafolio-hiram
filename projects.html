@@ -17,21 +17,21 @@
 
 <body>
     <header>
-    <div class="container">
-        <div class="header-content">
-            <h1>Projects</h1>
-            <button class="hamburger-menu" aria-label="Open navigation menu">
-                <i class="fas fa-bars"></i>
-            </button>
+        <div class="container">
+            <div class="header-content">
+                <h1>Projects</h1>
+                <button class="hamburger-menu" aria-label="Open navigation menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <section id="projects">
         <h2>My Work</h2>
@@ -156,23 +156,34 @@
         </div>
     </section>
 
+    <section id="call-to-action" data-aos="zoom-in">
+        <h2>Interested in working together?</h2>
+        <a href="contact.html" class="cta-button">Contact Me</a>
+        <a href="index.html" class="cta-button secondary">Home</a>
+    </section>
+
     <footer>
-    <div class="container">
-        <div class="social-links">
-            <a href="https://github.com/HiramRamirezR" target="_blank" aria-label="GitHub"><i
-                    class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/hiramramirez" target="_blank" aria-label="LinkedIn"><i
-                    class="fab fa-linkedin-in"></i></a>
-            <a href="mailto:hiram.j.ramirez@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/HiramRamirezR" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/hiramramirez" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:hiram.j.ramirez@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 - Hiram Ramírez. All rights reserved.</p>
         </div>
-        <p>&copy; 2025 - Hiram Ramírez. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
 
     <button id="backToTopBtn" title="Go to top">&#9650;</button>
 
     <script src="js/projectFilter.js"></script>
     <script src="js/hamburger.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
