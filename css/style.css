@@ -150,8 +150,55 @@ section h2 {
 }
 
 /* Contact Section */
-#contact p {
-    font-size: 1.1rem;
+#contact-info {
+    text-align: center;
+}
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    text-align: center;
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 170, 255, 0.3);
+    background-color: #00aaff;
+    color: #121212;
+}
+
+.contact-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00aaff;
+    transition: color 0.3s ease;
+}
+
+.contact-card:hover i {
+    color: #121212;
+}
+
+.contact-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.contact-card p {
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 /* Footer Styles */
