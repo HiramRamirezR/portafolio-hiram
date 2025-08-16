@@ -385,6 +385,27 @@ h2 {
     .contact-list li {
         padding: 0.6rem;
     }
+
+    .skills-carousel-desktop {
+        display: none !important;
+        /* Hide carousel on mobile */
+    }
+
+    .skills-grid-mobile {
+        display: grid !important;
+        /* Show grid on mobile */
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 columns */
+        gap: 0.8rem;
+        /* Slightly reduce gap for more space */
+    }
+
+    .skills-grid-mobile .skill-card {
+        font-size: 0.7em;
+        /* Further reduce font size */
+        padding: 0.6rem;
+        /* Further reduce padding */
+    }
 }
 
 /* Call to Action Section */
@@ -517,6 +538,21 @@ h2 {
 }
 
 
+
+/* Skills Display Control */
+.skills-carousel-desktop {
+    display: block;
+    /* Show carousel on desktop */
+    width: 100%; /* Ensure it takes full width of its parent */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.skills-grid-mobile {
+    display: none;
+    /* Hide grid on desktop by default */
+    margin-top: 1.5rem;
+    /* Add some space from the heading */
+}
 
 /* Skills Carousel Styles */
 .skills-carousel {
@@ -686,6 +722,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
+
     header,
     footer,
     section {
