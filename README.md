@@ -24,7 +24,7 @@ This portfolio serves to showcase my skills, projects, and the technologies I ma
 -   HTML
 -   CSS
 -   Agile
--   English
+-   English C1
 
 ## Projects
 
