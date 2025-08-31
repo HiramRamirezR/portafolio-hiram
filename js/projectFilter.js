@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (tags.includes('html') || tags.includes('css')) {
                         hasTag = true;
                     }
+                } else if (filter === 'hugging-face') {
+                    if (tags.includes('hugging face')) {
+                        hasTag = true;
+                    }
                 } else if (tags.includes(filter)) {
                     hasTag = true;
                 }
