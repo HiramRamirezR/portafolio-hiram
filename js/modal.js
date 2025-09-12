@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('project-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalSubtitle = document.getElementById('modal-subtitle');
-    const modalImage = document.getElementById('modal-image');
+    // const modalImage = document.getElementById('modal-image');
     const modalTags = document.getElementById('modal-tags');
     const modalArchitecture = document.getElementById('modal-architecture');
     const modalChallenges = document.getElementById('modal-challenges');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             modalTitle.textContent = projectDiv.dataset.title;
             modalSubtitle.textContent = projectDiv.dataset.subtitle;
-            modalImage.src = projectDiv.dataset.imgSrc;
+            // modalImage.src = projectDiv.dataset.imgSrc;
             modalArchitecture.textContent = projectDiv.dataset.architecture;
             modalChallenges.textContent = projectDiv.dataset.challenges;
             modalGithub.href = projectDiv.dataset.githubUrl;
