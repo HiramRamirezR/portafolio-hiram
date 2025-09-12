@@ -12,30 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add('active');
 
             projects.forEach(project => {
-                const commercialBadge = project.querySelector('.highlight-badge.commercial');
-                const personalBadge = project.querySelector('.highlight-badge.personal');
-                const tags = Array.from(project.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+                // Obtiene todos los filtros del proyecto desde su atributo data-filter
+                const projectFilters = project.dataset.filter ? project.dataset.filter.split(' ') : [];
 
-                let hasTag = false;
-                if (filter === 'all') {
-                    hasTag = true;
-                } else if (filter === 'commercial' && commercialBadge) {
-                    hasTag = true;
-                } else if (filter === 'personal' && personalBadge) {
-                    hasTag = true;
-                } else if (filter === 'html-css') {
-                    if (tags.includes('html') || tags.includes('css')) {
-                        hasTag = true;
-                    }
-                } else if (filter === 'hugging-face') {
-                    if (tags.includes('hugging face')) {
-                        hasTag = true;
-                    }
-                } else if (tags.includes(filter)) {
-                    hasTag = true;
-                }
-
-                if (hasTag) {
+                // Muestra el proyecto si el filtro es 'all' o si el filtro del botón está en la lista de filtros del proyecto
+                if (filter === 'all' || projectFilters.includes(filter)) {
                     project.style.display = 'block';
                 } else {
                     project.style.display = 'none';

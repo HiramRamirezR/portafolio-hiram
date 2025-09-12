@@ -35,33 +35,24 @@
 
     <section id="projects">
         <h2>My Work</h2>
-        <p class="filter-description">You can filter the projects by selecting the corresponding technologies.</p>
+        <p class="filter-description">You can filter the projects by selecting the corresponding categories.</p>
         <div id="filter-menu">
             <button class="filter-button active" data-filter="all">All</button>
+            <button class="filter-button" data-filter="backend">Backend</button>
+            <button class="filter-button" data-filter="full-stack">Full-stack</button>
+            <button class="filter-button" data-filter="ai-ml">AI/ML</button>
+            <button class="filter-button" data-filter="side-projects">Side Projects</button>
             <button class="filter-button" data-filter="commercial">Commercial</button>
-            <button class="filter-button" data-filter="personal">Personal</button>
-            <button class="filter-button" data-filter="fastapi">FastAPI</button>
-            <button class="filter-button" data-filter="python">Python</button>
-            <button class="filter-button" data-filter="sqlalchemy">SQLAlchemy</button>
-            <button class="filter-button" data-filter="opencv">OpenCV</button>
-            <button class="filter-button" data-filter="pygame">Pygame</button>
-            <button class="filter-button" data-filter="javascript">JavaScript</button>
-            <button class="filter-button" data-filter="html-css">HTML/CSS</button>
-            <button class="filter-button" data-filter="firebase">Firebase</button>
-            <button class="filter-button" data-filter="stripe">Stripe</button>
-            <button class="filter-button" data-filter="bootstrap">Bootstrap</button>
-            <button class="filter-button" data-filter="langchain">LangChain</button>
-            <button class="filter-button" data-filter="chromadb">ChromaDB</button>
-            <button class="filter-button" data-filter="streamlit">Streamlit</button>
-            <button class="filter-button" data-filter="hugging-face">Hugging Face</button>
-            <button class="filter-button" data-filter="pytorch">PyTorch</button>
         </div>
         <div class="projects-grid">
 
-            <div class="project project-highlight" data-aos="zoom-in">
-                <h3>🧵 Image Thread Generator <span class="highlight-badge">Proudest Work</span> <span
-                        class="highlight-badge personal">Personal Project</span></h3>
-                <p class="project-subtitle"><em>Developed the backend for an image processing application using Python and FastAPI. I implemented a RESTful API to manage business logic, data persistence with SQLAlchemy, and integration with the Stripe payment gateway. The system also handles server-side image manipulation using OpenCV.</em></p>
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="fastapi python sqlalchemy opencv stripe html-css javascript full-stack backend">
+                <h3>🧵 Image Thread Generator <span class="highlight-badge">Proudest Work</span></h3>
+                <p class="project-subtitle"><em>Developed the backend for an image processing application using Python
+                        and FastAPI. I implemented a RESTful API to manage business logic, data persistence with
+                        SQLAlchemy, and integration with the Stripe payment gateway. The system also handles server-side
+                        image manipulation using OpenCV.</em></p>
                 <img class="project-image" src="img/hilos.gif" alt="Image Thread Generator GIF">
                 <div class="project-buttons">
                     <!-- <a href="https://web-production-faf78.up.railway.app/" target="_blank" class="project-button"><i
@@ -88,11 +79,15 @@
 
             </div>
 
-            <div class="project project-highlight">
+            <div class="project project-highlight"
+                data-filter="commercial firebase bootstrap javascript html-css full-stack backend">
                 <h3>🎓 Student registration, payment and exam control <span
                         class="highlight-badge commercial">Commercial</span>
                 </h3>
-                <p class="project-subtitle"><em>Managed the backend and database for a commercial student management system. I was responsible for the entire data lifecycle, from designing the database schema in Firebase to implementing the business logic for student registration, payment tracking, and exam management. This system is currently in production and serves real clients.</em></p>
+                <p class="project-subtitle"><em>Managed the backend and database for a commercial student management
+                        system. I was responsible for the entire data lifecycle, from designing the database schema in
+                        Firebase to implementing the business logic for student registration, payment tracking, and exam
+                        management. This system is currently in production and serves real clients.</em></p>
                 <img class="project-image" src="img/student_registration.gif" alt="Student Registration GIF">
                 <div class="project-buttons">
                     <!-- <a href="https://muestra-control-alumnos.netlify.app/" target="_blank" class="project-button"><i
@@ -111,12 +106,17 @@
                 </div>
             </div>
 
-            <div class="project project-highlight" data-aos="zoom-in">
-                <h3>📝 AI-Powered Task Manager <span class="highlight-badge personal">Personal Project</span></h3>
-                <p class="project-subtitle"><em>Designed and built the backend for a desktop task manager. The backend, built with FastAPI, provides a RESTful API for all CRUD operations. I used SQLModel for data modeling and interaction with a SQLite database. A key feature is the integration of a Natural Language Processing (NLP) model to allow task creation from simple sentences.</em></p>
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="fastapi python sqlmodel sqlite pyside2 nlp backend ai-ml">
+                <h3>📝 AI-Powered Task Manager</h3>
+                <p class="project-subtitle"><em>Designed and built the backend for a desktop task manager. The backend,
+                        built with FastAPI, provides a RESTful API for all CRUD operations. I used SQLModel for data
+                        modeling and interaction with a SQLite database. A key feature is the integration of a Natural
+                        Language Processing (NLP) model to allow task creation from simple sentences.</em></p>
                 <img class="project-image" src="https://via.placeholder.com/350x150" alt="AI-Powered Task Manager">
                 <div class="project-buttons">
-                    <a href="https://github.com/HiramRamirezR/task_manager_AI_NLP" target="_blank" class="project-button secondary"><i class="fab fa-github"></i> View Code</a>
+                    <a href="https://github.com/HiramRamirezR/task_manager_AI_NLP" target="_blank"
+                        class="project-button secondary"><i class="fab fa-github"></i> View Code</a>
                 </div>
                 <div class="project-tags">
                     <span class="tag">FastAPI</span>
@@ -128,9 +128,13 @@
                 </div>
             </div>
 
-            <div class="project project-highlight" data-aos="zoom-in">
-                <h3>💬 Ollama RAG <span class="highlight-badge personal">Personal Project</span></h3>
-                <p class="project-subtitle"><em>Developed a Python-based backend for a Retrieval-Augmented Generation (RAG) system. The backend uses LangChain to orchestrate the interaction between a local Ollama language model and a ChromaDB vector store. It exposes an API that allows users to upload PDF documents and ask questions about their content.</em></p>
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="langchain chromadb ollama pypdf python backend ai-ml">
+                <h3>💬 Ollama RAG</h3>
+                <p class="project-subtitle"><em>Developed a Python-based backend for a Retrieval-Augmented Generation
+                        (RAG) system. The backend uses LangChain to orchestrate the interaction between a local Ollama
+                        language model and a ChromaDB vector store. It exposes an API that allows users to upload PDF
+                        documents and ask questions about their content.</em></p>
                 <img class="project-image" src="img/ollama_rag.gif" alt="Ollama RAG GIF">
                 <div class="project-buttons">
                     <a href="https://github.com/HiramRamirezR/ollama_rag" target="_blank"
@@ -145,9 +149,12 @@
                 </div>
             </div>
 
-            <div class="project project-highlight" data-aos="zoom-in">
-                <h3>🤖 AI Comments Generator <span class="highlight-badge personal">Personal Project</span></h3>
-                <p class="project-subtitle"><em>Built the backend for an AI-powered social media tool. The backend, developed with FastAPI, serves a Hugging Face language model. It provides an API that takes a post's topic as input and generates relevant comments using the model.</em></p>
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="python fastapi streamlit hugging-face pytorch backend ai-ml">
+                <h3>🤖 AI Comments Generator</h3>
+                <p class="project-subtitle"><em>Built the backend for an AI-powered social media tool. The backend,
+                        developed with FastAPI, serves a Hugging Face language model. It provides an API that takes a
+                        post's topic as input and generates relevant comments using the model.</em></p>
                 <img class="project-image" src="img/AI.gif" alt="AI Comments Generator GIF">
                 <div class="project-buttons">
                     <a href="https://github.com/HiramRamirezR/AI-comments-generator" target="_blank"
@@ -162,8 +169,8 @@
                 </div>
             </div>
 
-            <div class="project project-highlight">
-                <h3>💻 Hiram Ramírez - Portfolio <span class="highlight-badge personal">Personal</span></h3>
+            <div class="project project-highlight" data-filter="html-css javascript">
+                <h3>💻 Hiram Ramírez - Portfolio</h3>
                 <p class="project-subtitle"><em>A personal portfolio showcasing skills, projects, and technologies.</em>
                 </p>
                 <img class="project-image" src="img/portfolio_optimized.gif" alt="Portfolio Screenshot">
@@ -178,8 +185,8 @@
                 </div>
             </div>
 
-            <div class="project project-highlight">
-                <h3>☄️ Asteroids Game <span class="highlight-badge personal">Personal</span></h3>
+            <div class="project project-highlight" data-filter="python pygame side-projects">
+                <h3>☄️ Asteroids Game</h3>
                 <p class="project-subtitle"><em>A classic asteroids game implemented in Python.</em></p>
                 <img class="project-image" src="img/asteroids.gif" alt="Asteroids Game GIF">
                 <div class="project-buttons">
@@ -192,8 +199,8 @@
                 </div>
             </div>
 
-            <div class="project project-highlight">
-                <h3>🪓 Hangman Game <span class="highlight-badge personal">Personal</span></h3>
+            <div class="project project-highlight" data-filter="python side-projects">
+                <h3>🪓 Hangman Game</h3>
                 <p class="project-subtitle"><em>A classic hangman game implemented in Python.</em></p>
                 <img class="project-image" src="img/hangman.gif" alt="Hangman Game GIF">
                 <div class="project-buttons">
