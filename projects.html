@@ -110,24 +110,22 @@
             </div>
 
             <div class="project project-highlight" data-aos="zoom-in"
-                data-filter="langchain chromadb ollama pypdf python backend ai-ml">
+                data-filter="langchain chromadb ollama pypdf python backend ai-ml"
+                data-title="Ollama RAG"
+                data-img-src="img/ollama_rag.gif"
+                data-github-url="https://github.com/HiramRamirezR/ollama_rag"
+                data-description="Developed a Python-based backend for a Retrieval-Augmented Generation (RAG) system. The backend uses LangChain to orchestrate the interaction between a local Ollama language model and a ChromaDB vector store. It exposes an API that allows users to upload PDF documents and ask questions about their content."
+                data-architecture="The architecture focuses on privacy and control, using Ollama to run language models locally, avoiding dependency on third-party APIs. LangChain was chosen as the main framework to orchestrate the RAG pipeline, from loading documents with PyPDF to managing the vector database with ChromaDB. This combination allows for rapid experimentation and a robust and modular RAG system."
+                data-challenges="The main challenge was optimizing the 'chunking' (text splitting) process and the generation of 'embeddings' to ensure that the context retrieved by the vector database was relevant and accurate for the user's questions. This project was fundamental to gaining practical experience with the RAG architecture, handling language models locally, and understanding how the different components (LLM, Vector Store, Embeddings) interact to create an intelligent document chat system.">
                 <h3>💬 Ollama RAG</h3>
-                <p class="project-subtitle"><em>Developed a Python-based backend for a Retrieval-Augmented Generation
-                        (RAG) system. The backend uses LangChain to orchestrate the interaction between a local Ollama
-                        language model and a ChromaDB vector store. It exposes an API that allows users to upload PDF
-                        documents and ask questions about their content.</em></p>
                 <img class="project-image" src="img/ollama_rag.gif" alt="Ollama RAG GIF">
-                <div class="project-buttons">
-                    <a href="https://github.com/HiramRamirezR/ollama_rag" target="_blank"
-                        class="project-button"><i class="fab fa-github"></i> View Code</a>
-                </div>
                 <div class="project-tags">
                     <span class="tag">LangChain</span>
                     <span class="tag">ChromaDB</span>
                     <span class="tag">Ollama</span>
-                    <span class="tag">PyPDF</span>
                     <span class="tag">Python</span>
                 </div>
+                <button class="project-button details-button"><i class="fas fa-eye"></i> View Details</button>
             </div>
 
             <div class="project project-highlight" data-aos="zoom-in"
