@@ -725,6 +725,15 @@ h2 {
     color: #ccc;
 }
 
+.project-count {
+    text-align: center;
+    margin-top: -1rem; /* Adjust as needed to position it correctly */
+    margin-bottom: 1rem;
+    font-size: 1.2rem; /* Make the font size larger */
+    color: #00aaff; /* Match the accent color */
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
 
     header,
