@@ -114,7 +114,7 @@ section h2 {
     font-size: 1.5rem;
 }
 
-.project a {
+.project-button {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -125,8 +125,12 @@ section h2 {
     transition: background-color 0.3s ease;
 }
 
-.project a:hover {
+.project-button:hover {
     background: #0088cc;
+}
+
+.project-button i {
+    margin-right: 0.5rem;
 }
 
 /* Highlighted Project Styles */
@@ -796,4 +800,71 @@ h2 {
     .subtitle {
         font-size: 0.7em;
     }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    margin: 10% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#modal-tags .tag {
+    margin-bottom: 1rem;
+}
+
+.details-button {
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+.details-button:hover {
+    background-color: #0088cc;
 }
