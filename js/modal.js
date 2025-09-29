@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalArchitecture = document.getElementById('modal-architecture');
     const modalChallenges = document.getElementById('modal-challenges');
     const modalGithub = document.getElementById('modal-github');
+    const modalLive = document.getElementById('modal-live');
     const closeButton = document.querySelector('.close-button');
 
     document.querySelectorAll('.details-button').forEach(button => {
@@ -18,7 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
             // modalImage.src = projectDiv.dataset.imgSrc;
             modalArchitecture.textContent = projectDiv.dataset.architecture;
             modalChallenges.textContent = projectDiv.dataset.challenges;
-            modalGithub.href = projectDiv.dataset.githubUrl;
+
+            if (projectDiv.dataset.githubUrl) {
+                modalGithub.href = projectDiv.dataset.githubUrl;
+                modalGithub.style.display = 'inline-block';
+            } else {
+                modalGithub.style.display = 'none';
+            }
+
+            if (projectDiv.dataset.liveUrl) {
+                modalLive.href = projectDiv.dataset.liveUrl;
+                modalLive.style.display = 'inline-block';
+            } else {
+                modalLive.style.display = 'none';
+            }
 
             modalTags.innerHTML = '';
             const tags = projectDiv.querySelectorAll('.tag');
