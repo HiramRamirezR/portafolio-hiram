@@ -5,30 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Hiram Ramírez - Backend Developer specializing in Python and web technologies. Explore my resume, projects, and contact information.">
+        content="Hiram Ramírez - Python Backend Developer (AI, Agents & Integrations). Explore my resume, AI projects, and contact information.">
     <meta name="keywords"
-        content="Hiram Ramírez, Backend Developer, Python, JavaScript, FastAPI, Web Development, Automation, Portfolio, Resume">
+        content="Hiram Ramírez, Python Backend Developer, AI, FastAPI, Agentic Engineering, LLMs, Portfolio, Resume">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Hiram Ramírez - Python Developer</title>
+    <title>Hiram Ramírez - Python Backend Developer (AI, Agents & Integrations)</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 </head>
 
 <body>
-    <header data-aos="fade-down">
+    <header>
         <div class="container">
             <div class="header-content">
-                <h1>Hiram Ramírez - Python Developer</h1>
-                <button class="hamburger-menu" aria-label="Open navigation menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <h1>
+                    <span class="header-name">Hiram Ramírez</span>
+                    <span class="header-role" data-i18n="header_role">Python Backend Developer (AI, Agents & Integrations)</span>
+                </h1>
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle" onclick="toggleLang()" data-i18n-aria="lang_toggle_en">ES</button>
+                    <a href="Hiram%20Ramirez%20CV%20jun%202026.pdf" class="download-btn" download data-i18n-aria="download_cv" title="Download CV (PDF)" onclick="trackEvent('cv_download')">
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Switch to light mode"><i class="fas fa-moon"></i></button>
+                    <button class="hamburger-menu" aria-label="Open navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="projects.html" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                    <li class="nav-mobile-actions">
+                        <button class="lang-toggle" onclick="toggleLang()">ES</button>
+                        <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+                        <a href="Hiram%20Ramirez%20CV%20jun%202026.pdf" class="download-btn" download onclick="trackEvent('cv_download')">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -42,7 +67,7 @@
                         data-aos="fade-up">
                 </div>
                 <div class="subtitle-container">
-                    <pre class="subtitle" id="animated-subtitle"><span class="syntax-number">3</span> years of experience in <span class="syntax-keyword">Python</span>. Bilingual (<span class="syntax-string">Spanish</span>-<span class="syntax-string">English</span>).
+                    <pre class="subtitle" id="animated-subtitle"><span class="syntax-number">4+</span> years of experience in <span class="syntax-keyword">Python</span>. Bilingual (<span class="syntax-string">Spanish</span>-<span class="syntax-string">English</span>).
                         Open to
                         <span class="syntax-comment">remote work</span>
                         opportunities.</>
@@ -54,31 +79,31 @@
                     <div class="skills-row">
                         <div class="skills-track">
                             <div class="skill-card">🐍 Python</div>
-                            <div class="skill-card">🌿 Git</div>
-                            <div class="skill-card">🐙 GitHub</div>
                             <div class="skill-card">🚀 FastAPI</div>
-                            <div class="skill-card">🦄 Django</div>
-                            <div class="skill-card">🐦 Wagtail</div>
                             <div class="skill-card">✨ Pydantic</div>
-                            <div class="skill-card">🌐 HTTP</div>
-                            <div class="skill-card">🐘 PostgreSQL</div>
-                            <div class="skill-card">🧪 SQLAlchemy</div>
-                            <div class="skill-card">📄 JSON</div>
-                            <div class="skill-card">🤖 OpenAI</div>
+                            <div class="skill-card">🌐 REST APIs</div>
+                            <div class="skill-card">📋 Spec-Driven Dev</div>
+                            <div class="skill-card">🤖 Agentic Engineering</div>
+                            <div class="skill-card">🧠 LLMs</div>
+                            <div class="skill-card">📎 RAG</div>
+                            <div class="skill-card">⛓️ LangChain</div>
+                            <div class="skill-card">🦙 Ollama</div>
+                            <div class="skill-card">🔮 Gemini</div>
+                            <div class="skill-card">🎨 ComfyUI</div>
                         </div>
                     </div>
                     <div class="skills-row">
                         <div class="skills-track">
-                            <div class="skill-card">🔑 dotenv</div>
-                            <div class="skill-card">📦 Virtual Environments</div>
+                            <div class="skill-card">🐘 PostgreSQL</div>
+                            <div class="skill-card">🧪 SQLAlchemy</div>
+                            <div class="skill-card">🔥 Firebase</div>
+                            <div class="skill-card">☁️ Salesforce Admin</div>
                             <div class="skill-card">🐳 Docker</div>
-                            <div class="skill-card">☁️ Deployment</div>
-                            <div class="skill-card">🔬 pytest</div>
                             <div class="skill-card">⚙️ CI/CD</div>
-                            <div class="skill-card">📜 JavaScript</div>
-                            <div class="skill-card">📄 HTML</div>
-                            <div class="skill-card">🎨 CSS</div>
-                            <div class="skill-card">🔄 Agile</div>
+                            <div class="skill-card">🚀 Deployment Workflows</div>
+                            <div class="skill-card">🔌 API Integrations</div>
+                            <div class="skill-card">🌿 Git</div>
+                            <div class="skill-card">🐙 GitHub</div>
                             <div class="skill-card">🗣️ English C1</div>
                         </div>
                     </div>
@@ -86,97 +111,128 @@
             </div>
             <div class="skills-grid-mobile">
                 <div class="skill-card">🐍 Python</div>
-                <div class="skill-card">🌿 Git</div>
-                <div class="skill-card">🐙 GitHub</div>
                 <div class="skill-card">🚀 FastAPI</div>
-                <div class="skill-card">🦄 Django</div>
-                <div class="skill-card">🐦 Wagtail</div>
                 <div class="skill-card">✨ Pydantic</div>
-                <div class="skill-card">🌐 HTTP</div>
+                <div class="skill-card">🌐 REST APIs</div>
+                <div class="skill-card">📋 Spec-Driven Dev</div>
+                <div class="skill-card">🤖 Agentic Engineering</div>
+                <div class="skill-card">🧠 LLMs</div>
+                <div class="skill-card">📎 RAG</div>
+                <div class="skill-card">⛓️ LangChain</div>
+                <div class="skill-card">🦙 Ollama</div>
+                <div class="skill-card">🔮 Gemini</div>
+                <div class="skill-card">🎨 ComfyUI</div>
                 <div class="skill-card">🐘 PostgreSQL</div>
                 <div class="skill-card">🧪 SQLAlchemy</div>
-                <div class="skill-card">📄 JSON</div>
-                <div class="skill-card">🤖 OpenAI</div>
-                <div class="skill-card">🔑 dotenv</div>
-                <div class="skill-card">📦 Virtual Environments</div>
+                <div class="skill-card">🔥 Firebase</div>
+                <div class="skill-card">☁️ Salesforce Admin</div>
                 <div class="skill-card">🐳 Docker</div>
-                <div class="skill-card">☁️ Deployment</div>
-                <div class="skill-card">🔬 pytest</div>
                 <div class="skill-card">⚙️ CI/CD</div>
-                <div class="skill-card">📜 JavaScript</div>
-                <div class="skill-card">📄 HTML</div>
-                <div class="skill-card">🎨 CSS</div>
-                <div class="skill-card">🔄 Agile</div>
+                <div class="skill-card">🚀 Deployment Workflows</div>
+                <div class="skill-card">🔌 API Integrations</div>
+                <div class="skill-card">🌿 Git</div>
+                <div class="skill-card">🐙 GitHub</div>
                 <div class="skill-card">🗣️ English C1</div>
             </div>
         </div>
     </section>
 
-    <section id="resume" data-aos="fade-up">
-
-
-        <div class="resume-section" data-aos="fade-up">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>Python Developer</h3>
-                <p><strong>Mighty studio (Mexico)</strong> | November 2022 - Present</p>
-                <ul>
-                    <li>Developed and maintained robust backend services using <strong>Python</strong> and
-                        <strong>FastAPI</strong>, integrating with <strong>PostgreSQL</strong> databases via
-                        <strong>SQLAlchemy</strong> to ensure high performance and scalability.</li>
-                    <li>Streamlined development workflows by implementing and supporting <strong>CI/CD</strong> pipeline
-                        automation, leveraging <strong>Docker</strong> for containerization and improving overall
-                        efficiency.</li>
-                    <li>Collaborated with cross-functional teams in an <strong>Agile</strong> environment to swiftly
-                        diagnose and resolve critical production issues, utilizing <strong>Git</strong> and
-                        <strong>GitHub</strong> for version control and collaboration.</li>
-                </ul>
+    <section id="metrics" data-aos="fade-up">
+        <h2 data-i18n="metric_title">Impact</h2>
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <span class="metric-value" data-count="1.4" data-prefix="~$" data-suffix="M" data-i18n="metric_1_value">~$1.4M</span>
+                <span class="metric-label" data-i18n="metric_1_label">Annual savings</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value" data-i18n="metric_2_value">8→2</span>
+                <span class="metric-label" data-i18n="metric_2_label">Team reduction</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value" data-count="4" data-suffix="+" data-i18n="metric_3_value">4+</span>
+                <span class="metric-label" data-i18n="metric_3_label">Years experience</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value" data-count="3" data-i18n="metric_4_value">3</span>
+                <span class="metric-label" data-i18n="metric_4_label">Projects in production</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value" data-metric="visits" data-count="0" data-i18n="metric_5_value">0</span>
+                <span class="metric-label" data-i18n="metric_5_label">Visits this month</span>
             </div>
         </div>
+    </section>
 
-        <div class="resume-section" data-aos="fade-up">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Fullstack Rails Developer</h3>
-                <p><strong>Le Wagon</strong> | July 2022 - September 2022</p>
-                <ul>
-                    <li>Intensive 9-week bootcamp focused on building web applications with Ruby on Rails, covering
-                        backend development, database design, and API integration.</li>
-                </ul>
-            </div>
-            <div class="education-item">
-                <h3>Fullstack MERN Developer</h3>
-                <p><strong>Kodemia</strong> | August 2021 - April 2022</p>
-                <ul>
-                    <li>Comprehensive program on the MERN stack (MongoDB, Express.js, React, Node.js), developing
-                        full-stack web applications and RESTful APIs.</li>
-                </ul>
-            </div>
-            <div class="education-item">
-                <h3>3D Character Animation</h3>
-                <p><strong>Universidad de Artes Digitales</strong> | January 2011 - December 2013</p>
-                <ul>
-                    <li>Specialized in 3D character animation, gaining proficiency in Maya software and understanding
-                        its integration into production pipelines.</li>
-                </ul>
-            </div>
-        </div>
+    <section id="profile" data-aos="fade-up">
+        <h2 data-i18n="profile_title">Profile</h2>
+        <p data-i18n="profile_text">Python backend developer with <strong>4+ years</strong> of experience in scalable APIs and
+            <strong>Agentic Engineering</strong>. Specialized in custom automations that drive efficiency, achieving
+            <strong>~$1.4M MXN annual savings</strong> through intelligent workflow optimization. Currently building
+            independent AI-driven web solutions.</p>
+    </section>
 
-        <div class="resume-section" data-aos="fade-up">
-            <h2>Languages</h2>
+    <section id="experience" data-aos="fade-up">
+        <h2 data-i18n="experience_title">Experience</h2>
+        <div class="job">
+            <h3 data-i18n="experience_role">Python Backend Developer (AI & Integrations)</h3>
+            <p data-i18n="experience_company"><strong>Mighty Studio (Mexico)</strong> | November 2022 - June 2026</p>
             <ul>
-                <li>Spanish: Native proficiency</li>
-                <li>English: C1 proficiency (Fluent in technical and conversational contexts, capable of leading
-                    discussions, and experienced in 100% English-speaking work environments)</li>
+                <li data-i18n="experience_1">Scaled <strong>REST APIs</strong> using <strong>Python</strong>/<strong>FastAPI</strong> for
+                    business-critical internal systems, ensuring high performance and reliability.</li>
+                <li data-i18n="experience_2">Built an automation app that reduced the operational team from <strong>8 to 2 people</strong>,
+                    saving <strong>~$1.4M MXN annually</strong> through intelligent workflow optimization.</li>
+                <li data-i18n="experience_3">Engineered a unique <strong>100% custom integration</strong> embedding <strong>ComfyUI</strong>
+                    into <strong>ShotGrid Desktop</strong> for seamless AI image generation in the production
+                    pipeline.</li>
+                <li data-i18n="experience_4">Implemented <strong>Agentic Engineering</strong> and <strong>spec-driven development</strong> to
+                    optimize complex workflows and direct AI behavior.</li>
+                <li data-i18n="experience_5">Managed production data structures using <strong>PostgreSQL</strong> and
+                    <strong>SQLAlchemy</strong>, ensuring data integrity and scalability.</li>
             </ul>
         </div>
+    </section>
 
+    <section id="education" data-aos="fade-up">
+        <h2 data-i18n="education_title">Education</h2>
+        <div class="education-item">
+            <h3 data-i18n="edu_1_title">Fullstack Rails Developer</h3>
+            <p data-i18n="edu_1_info"><strong>Le Wagon</strong> | July 2022 - September 2022</p>
+            <ul>
+                <li data-i18n="edu_1_desc">Intensive 9-week bootcamp focused on building web applications with Ruby on Rails, covering
+                    backend development, database design, and API integration.</li>
+            </ul>
+        </div>
+        <div class="education-item">
+            <h3 data-i18n="edu_2_title">Fullstack MERN Developer</h3>
+            <p data-i18n="edu_2_info"><strong>Kodemia</strong> | August 2021 - April 2022</p>
+            <ul>
+                <li data-i18n="edu_2_desc">Comprehensive program on the MERN stack (MongoDB, Express.js, React, Node.js), developing
+                    full-stack web applications and RESTful APIs.</li>
+            </ul>
+        </div>
+        <div class="education-item">
+            <h3 data-i18n="edu_3_title">3D Character Animation</h3>
+            <p data-i18n="edu_3_info"><strong>Universidad de Artes Digitales</strong> | January 2011 - December 2013</p>
+            <ul>
+                <li data-i18n="edu_3_desc">Specialized in 3D character animation, gaining proficiency in Maya software and understanding
+                    its integration into production pipelines.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="languages" data-aos="fade-up">
+        <h2 data-i18n="languages_title">Languages</h2>
+        <ul>
+            <li data-i18n="lang_1">Spanish: Native proficiency</li>
+            <li data-i18n="lang_2">English: C1 proficiency (Fluent in technical and conversational contexts, capable of leading
+                discussions, and experienced in 100% English-speaking work environments)</li>
+        </ul>
     </section>
 
     <section id="call-to-action" data-aos="zoom-in">
-        <h2>Ready to see my work?</h2>
-        <a href="projects.html" class="cta-button">View My Projects</a>
-        <a href="contact.html" class="cta-button secondary">Contact Me</a>
+        <h2 data-i18n="cta_index_title">Ready to see my work?</h2>
+        <a href="projects.html" class="cta-button" data-i18n="cta_index_projects">View My Projects</a>
+        <a href="contact.html" class="cta-button secondary" data-i18n="cta_index_contact">Contact Me</a>
     </section>
 
     <footer>
@@ -188,13 +244,18 @@
                     class="fab fa-linkedin-in"></i></a>
             <a href="mailto:hiram.j.ramirez@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>&copy; 2025 - Hiram Ramírez. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> - Hiram Ramírez. <span data-i18n="footer_rights">All rights reserved.</span></p>
     </div>
 </footer>
 
     <button id="backToTopBtn" title="Go to top">&#9650;</button>
 
+    <a href="https://wa.me/522221033301" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/writingEffect.js"></script>
     <script src="js/hamburger.js"></script>

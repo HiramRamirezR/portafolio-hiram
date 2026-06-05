@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const phrases = `
 <span class="syntax-keyword">try</span>:
     <span class="syntax-keyword">def</span> <span class="syntax-function">profile</span>():
-        <span class="syntax-function">experience</span>(years = <span class="syntax-number">3</span>, language = <span class="syntax-string">"Python"</span>)
+        <span class="syntax-function">experience</span>(years = <span class="syntax-number">4</span>, language = <span class="syntax-string">"Python"</span>)
         <span class="syntax-function">speak</span>([<span class="syntax-string">"Spanish"</span>, <span class="syntax-string">"English"</span>])
         <span class="syntax-function">open_to</span>(<span class="syntax-string">"remote_work"</span>)
 
