@@ -94,6 +94,54 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof trackEvent === 'function') trackEvent(eventName);
     }
 
+    function initCarousel(carousel) {
+        const img = carousel.querySelector('[data-carousel-img]');
+        const prevBtn = carousel.querySelector('[data-carousel-prev]');
+        const nextBtn = carousel.querySelector('[data-carousel-next]');
+        const dotsContainer = carousel.querySelector('[data-carousel-dots]');
+        const slides = ['img/global.png', 'img/quiromed.png', 'img/encinas.png', 'img/evi.png'];
+        let currentIndex = 0;
+        let interval;
+
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => { stopAuto(); goTo(i); });
+            dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+            currentIndex = index;
+            img.src = slides[currentIndex];
+            dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+                d.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function next() {
+            goTo(currentIndex === slides.length - 1 ? 0 : currentIndex + 1);
+        }
+
+        function startAuto() {
+            stopAuto();
+            interval = setInterval(next, 3000);
+        }
+
+        function stopAuto() {
+            clearInterval(interval);
+        }
+
+        carousel.addEventListener('mouseenter', stopAuto);
+        carousel.addEventListener('mouseleave', startAuto);
+
+        prevBtn.addEventListener('click', () => { stopAuto(); goTo(currentIndex === 0 ? slides.length - 1 : currentIndex - 1); });
+        nextBtn.addEventListener('click', () => { stopAuto(); next(); });
+
+        startAuto();
+    }
+
+    document.querySelectorAll('.project-carousel').forEach(initCarousel);
+
     document.querySelectorAll('.details-button').forEach(button => {
         button.addEventListener('click', (e) => {
             const projectDiv = e.target.closest('.project');

@@ -75,7 +75,7 @@
                 data-title-es="✨ Leazro"
                 data-subtitle="A monetized platform for digital event invitations."
                 data-subtitle-es="Una plataforma monetizada para invitaciones digitales."
-                data-img-src="https://via.placeholder.com/350x150"
+                data-img-src="img/leazro.png"
                 data-live-url="https://leazro.com/"
                 data-description="Leazro is a commercial web application in production, designed for creating and managing digital event invitations. It serves a recurring client base and is fully monetized through Stripe. Integrated Google Gemini API for AI-driven content generation and built automation tools for invitation workflows."
                 data-description-es="Leazro es una aplicación web comercial en producción para crear y gestionar invitaciones digitales. Tiene una base de clientes recurrentes y está monetizada con Stripe. Integra la API de Google Gemini para generación de contenido impulsada por IA y herramientas de automatización."
@@ -85,7 +85,7 @@
                 data-challenges-es="El principal reto fue la integración segura de Stripe para pagos recurrentes con webhooks. Otro desafío fue diseñar una estructura flexible en Firebase que soporte diversas personalizaciones para una base de clientes en crecimiento. La integración de Gemini API también requirió ingeniería de prompts cuidadosa."
                 >
                 <h3>✨ Leazro</h3>
-                <img class="project-image" src="https://via.placeholder.com/350x150" alt="Leazro Project Placeholder">
+                <img class="project-image" src="img/leazro.png" alt="Leazro Project">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">JavaScript</span>
@@ -100,6 +100,7 @@
                 data-filter="full-stack python fastapi postgresql stripe commercial"
                 data-title="🌙 Moon's forest (EdTech)"
                 data-title-es="🌙 Moon's forest (EdTech)"
+                data-img-src="img/moonsforest.png"
                 data-subtitle="Complete web platform for a children's English learning app."
                 data-subtitle-es="Plataforma web completa para una app infantil de aprendizaje de inglés."
                 data-description="Built the complete web platform for a children's English learning application. Handles user registration, subscription payments via Stripe, and progress tracking. Currently used in a pilot version for real student testing."
@@ -110,7 +111,7 @@
                 data-challenges-es="El principal reto fue diseñar un sistema de suscripciones escalable con Stripe que maneje diferentes planes y facturación recurrente. El seguimiento de progreso estudiantil a través de múltiples módulos también requirió modelado cuidadoso."
                 >
                 <h3>🌙 Moon's forest (EdTech)</h3>
-                <img class="project-image" src="https://via.placeholder.com/350x150" alt="Moon's Forest Project">
+                <img class="project-image" src="img/moonsforest.png" alt="Moon's Forest Project">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">Python</span>
@@ -124,6 +125,7 @@
                 data-filter="web-design"
                 data-title="🎨 Web Design & Development"
                 data-title-es="🎨 Diseño y Desarrollo Web"
+                data-img-src="img/global.png"
                 data-subtitle="Modern, responsive websites for real clients — from immigration services to Montessori schools."
                 data-subtitle-es="Sitios web modernos y responsivos para clientes reales — desde servicios migratorios hasta escuelas Montessori."
                 data-description="I design and build modern, responsive websites for businesses and professionals. Each project is crafted with a focus on clean UI, intuitive navigation, and mobile-first design — ensuring every client gets a site that truly represents their brand and connects with their audience."
@@ -137,7 +139,12 @@
                 >
                 <span class="web-design-badge" data-i18n="filter_web">Web Design</span>
                 <h3>🎨 Web Design & Development</h3>
-                <img class="project-image" src="https://via.placeholder.com/350x150" alt="Web Design Portfolio">
+                <div class="project-carousel" data-carousel>
+                    <img class="project-image" src="img/global.png" alt="Global Mobility Puebla" data-carousel-img>
+                    <button class="carousel-btn carousel-prev" data-carousel-prev>&lsaquo;</button>
+                    <button class="carousel-btn carousel-next" data-carousel-next>&rsaquo;</button>
+                    <div class="carousel-dots" data-carousel-dots></div>
+                </div>
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">HTML</span>
@@ -271,7 +278,6 @@
             <span class="close-button">&times;</span>
             <h2 id="modal-title"></h2>
             <p id="modal-subtitle"></p>
-            <!-- <img id="modal-image" src="" alt="Project Image"> -->
             <div id="modal-tags"></div>
             <div id="modal-architecture-section">
                 <h3 data-i18n="modal_architecture">Architecture & Decisions</h3>
