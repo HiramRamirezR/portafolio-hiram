@@ -230,6 +230,62 @@ section h2 {
     box-shadow: 0 0 15px var(--shadow-accent);
 }
 
+/* Web Design Featured Card */
+.project-web-design {
+    border: 2px solid #f0a500;
+    box-shadow: 0 0 15px rgba(240, 165, 0, 0.3);
+    background: linear-gradient(135deg, var(--bg-item) 0%, #2a2a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-web-design::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f0a500, #ff6b35, #f0a500);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 0%; }
+}
+
+[data-theme="light"] .project-web-design {
+    background: linear-gradient(135deg, var(--bg-item) 0%, #f5f0e0 100%);
+}
+
+.project-web-design h3 {
+    color: #f0a500;
+}
+
+.project-web-design .details-button {
+    background: linear-gradient(135deg, #f0a500, #ff6b35);
+    border: none;
+}
+
+.project-web-design .details-button:hover {
+    background: linear-gradient(135deg, #d49400, #e55a2b);
+}
+
+.web-design-badge {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #f0a500, #ff6b35);
+    color: #fff;
+    border-radius: 15px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .highlight-badge {
     display: inline-block;
     margin-left: 1rem;

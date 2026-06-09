@@ -64,8 +64,8 @@
             <button class="filter-button" data-filter="backend-only" data-i18n="filter_backend">Backend Only</button>
             <button class="filter-button" data-filter="full-stack" data-i18n="filter_fullstack">Full-stack</button>
             <button class="filter-button" data-filter="ai-ml" data-i18n="filter_aiml">AI/ML</button>
-            <button class="filter-button" data-filter="side-projects" data-i18n="filter_side">Side Projects</button>
             <button class="filter-button" data-filter="commercial" data-i18n="filter_commercial">Commercial</button>
+            <button class="filter-button" data-filter="web-design" data-i18n="filter_web">Web Design</button>
         </div>
         <div class="projects-grid">
 
@@ -120,29 +120,31 @@
                 </div>
             </div>
 
-            <div class="project project-highlight" data-aos="zoom-in"
-                data-filter="ai-ml full-stack python fastapi"
-                data-title="🤖 Independent AI Web Dev"
-                data-title-es="🤖 Desarrollo Web IA Independiente"
-                data-subtitle="Designing custom web solutions leveraging AI agents and LLMs for diverse client needs."
-                data-subtitle-es="Soluciones web personalizadas usando agentes de IA y LLMs para diversas necesidades de clientes."
-                data-description="Independent development of custom AI-driven web solutions for clients. Leverages AI agents and LLMs (including Gemini and LangChain) to build intelligent automation, content generation, and data processing pipelines tailored to specific business needs."
-                data-description-es="Desarrollo independiente de soluciones web personalizadas impulsadas por IA. Usa agentes de IA y LLMs (Gemini, LangChain) para construir automatización inteligente, generación de contenido y pipelines de procesamiento de datos adaptados a cada negocio."
-                data-architecture="Each solution is custom-architected based on client requirements, typically combining FastAPI backends with PostgreSQL, AI agent orchestration via LangChain, and LLM integration (Gemini, Ollama). Solutions range from AI content generation to automated data workflows."
-                data-architecture-es="Cada solución se diseña según los requisitos del cliente, combinando backends FastAPI con PostgreSQL, orquestación de agentes IA con LangChain e integración de LLMs (Gemini, Ollama). Los proyectos van desde generación de contenido hasta flujos de datos automatizados."
-                data-challenges="The main challenge is designing reliable AI agent workflows that consistently produce high-quality outputs. Each client has unique requirements that demand custom prompt engineering, careful RAG pipeline design, and robust error handling for production-grade reliability."
-                data-challenges-es="El principal reto es diseñar flujos de agentes IA confiables que produzcan resultados de alta calidad. Cada cliente tiene requisitos únicos que exigen ingeniería de prompts personalizada, diseño cuidadoso de pipelines RAG y manejo robusto de errores para confiabilidad en producción."
-                data-clients='[{"name": "Client Site 1", "url": "https://example1.com", "description": "AI-powered content generation platform"}, {"name": "Client Site 2", "url": "https://example2.com", "description": "Custom automation workflow system"}]'
-                data-clients-es='[{"name": "Sitio de Cliente 1", "url": "https://example1.com", "description": "Plataforma de generación de contenido con IA"}, {"name": "Sitio de Cliente 2", "url": "https://example2.com", "description": "Sistema de automatización de flujos de trabajo"}]'
+            <div class="project project-web-design" data-aos="zoom-in"
+                data-filter="web-design"
+                data-title="🎨 Web Design & Development"
+                data-title-es="🎨 Diseño y Desarrollo Web"
+                data-subtitle="Modern, responsive websites for real clients — from immigration services to Montessori schools."
+                data-subtitle-es="Sitios web modernos y responsivos para clientes reales — desde servicios migratorios hasta escuelas Montessori."
+                data-description="I design and build modern, responsive websites for businesses and professionals. Each project is crafted with a focus on clean UI, intuitive navigation, and mobile-first design — ensuring every client gets a site that truly represents their brand and connects with their audience."
+                data-description-es="Diseño y construyo sitios web modernos y responsivos para negocios y profesionales. Cada proyecto se crea con enfoque en UI limpia, navegación intuitiva y diseño mobile-first — asegurando que cada cliente tenga un sitio que represente su marca y conecte con su audiencia."
+                data-architecture="Each site is built with a mobile-first approach using semantic HTML, modern CSS layouts, and vanilla JavaScript for interactivity. Hosted on Netlify for fast, reliable delivery with continuous deployment."
+                data-architecture-es="Cada sitio se construye con enfoque mobile-first usando HTML semántico, CSS moderno y JavaScript vanilla para interactividad. Alojado en Netlify para entrega rápida y confiable con despliegue continuo."
+                data-challenges="The main challenge is translating each client's unique brand identity into a clean, functional web design. Finding the right balance between visual appeal, usability, and performance requires careful planning and iteration with each client."
+                data-challenges-es="El principal reto es traducir la identidad única de cada cliente en un diseño web limpio y funcional. Encontrar el equilibrio entre atractivo visual, usabilidad y rendimiento requiere planeación cuidadosa e iteración con cada cliente."
+                data-clients='[{"name": "Global Mobility Puebla", "url": "https://globalmobilitypuebla.netlify.app/", "description": "Immigration & consular services"}, {"name": "Quiromed", "url": "https://quiromed.netlify.app/", "description": "Physiotherapy & wellness clinic"}, {"name": "Encinas y Asociados", "url": "https://encinasyasociados.netlify.app/", "description": "Accounting firm"}, {"name": "Educación para la Vida", "url": "https://educacionparalavida.netlify.app/", "description": "Montessori school"}]'
+                data-clients-es='[{"name": "Global Mobility Puebla", "url": "https://globalmobilitypuebla.netlify.app/", "description": "Servicios migratorios y consulares"}, {"name": "Quiromed", "url": "https://quiromed.netlify.app/", "description": "Clínica de fisioterapia y bienestar"}, {"name": "Encinas y Asociados", "url": "https://encinasyasociados.netlify.app/", "description": "Despacho contable"}, {"name": "Educación para la Vida", "url": "https://educacionparalavida.netlify.app/", "description": "Escuela Montessori"}]'
                 >
-                <h3>🤖 Independent AI Web Dev</h3>
-                <img class="project-image" src="https://via.placeholder.com/350x150" alt="Independent AI Web Development">
+                <span class="web-design-badge" data-i18n="filter_web">Web Design</span>
+                <h3>🎨 Web Design & Development</h3>
+                <img class="project-image" src="https://via.placeholder.com/350x150" alt="Web Design Portfolio">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
-                    <span class="tag">AI Agents</span>
-                    <span class="tag">LLMs</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">FastAPI</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Responsive Design</span>
+                    <span class="tag">Netlify</span>
                 </div>
             </div>
 
@@ -271,14 +273,18 @@
             <p id="modal-subtitle"></p>
             <!-- <img id="modal-image" src="" alt="Project Image"> -->
             <div id="modal-tags"></div>
-            <h3 data-i18n="modal_architecture">Architecture & Decisions</h3>
-            <p id="modal-architecture"></p>
+            <div id="modal-architecture-section">
+                <h3 data-i18n="modal_architecture">Architecture & Decisions</h3>
+                <p id="modal-architecture"></p>
+            </div>
             <div id="modal-clients" style="display: none;">
                 <h3 data-i18n="modal_clients">Client Sites</h3>
                 <ul id="modal-clients-list"></ul>
             </div>
-            <h3 data-i18n="modal_challenges">Challenges & Learnings</h3>
-            <p id="modal-challenges"></p>
+            <div id="modal-challenges-section">
+                <h3 data-i18n="modal_challenges">Challenges & Learnings</h3>
+                <p id="modal-challenges"></p>
+            </div>
             <div class="project-buttons">
                 <a id="modal-github" href="" target="_blank" class="project-button"><i class="fab fa-github"></i> <span data-i18n="modal_view_code">View Code</span></a>
                 <a id="modal-live" href="" target="_blank" class="project-button"><i class="fas fa-external-link-alt"></i> <span data-i18n="modal_view_project">View Project</span></a>

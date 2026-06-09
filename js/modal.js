@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalSubtitle = document.getElementById('modal-subtitle');
     const modalTags = document.getElementById('modal-tags');
     const modalArchitecture = document.getElementById('modal-architecture');
+    const modalArchSection = document.getElementById('modal-architecture-section');
     const modalChallenges = document.getElementById('modal-challenges');
+    const modalChallengesSection = document.getElementById('modal-challenges-section');
     const modalClients = document.getElementById('modal-clients');
     const modalClientsList = document.getElementById('modal-clients-list');
     const modalGithub = document.getElementById('modal-github');
@@ -23,8 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function openModal(projectDiv) {
         modalTitle.textContent = getProjectData(projectDiv, 'title');
         modalSubtitle.textContent = getProjectData(projectDiv, 'subtitle');
-        modalArchitecture.textContent = getProjectData(projectDiv, 'architecture');
-        modalChallenges.textContent = getProjectData(projectDiv, 'challenges');
+
+        const archText = getProjectData(projectDiv, 'architecture');
+        if (archText && archText.trim()) {
+            modalArchitecture.textContent = archText;
+            modalArchSection.style.display = 'block';
+        } else {
+            modalArchSection.style.display = 'none';
+        }
+
+        const challengesText = getProjectData(projectDiv, 'challenges');
+        if (challengesText && challengesText.trim()) {
+            modalChallenges.textContent = challengesText;
+            modalChallengesSection.style.display = 'block';
+        } else {
+            modalChallengesSection.style.display = 'none';
+        }
 
         if (projectDiv.dataset.githubUrl) {
             modalGithub.href = projectDiv.dataset.githubUrl;
