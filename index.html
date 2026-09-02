@@ -5,14 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Hiram Ramírez - Python Backend Developer (AI, Agents & Integrations). Explore my resume, AI projects, and contact information.">
+        content="Hiram Ramírez - AI Engineer. Building production Python backends, RAG pipelines, and agentic workflows with FastAPI, LLMs, and more.">
     <meta name="keywords"
-        content="Hiram Ramírez, Python Backend Developer, AI, FastAPI, Agentic Engineering, LLMs, Portfolio, Resume">
+        content="Hiram Ramírez, AI Engineer, Python, FastAPI, RAG, LLMs, Agentic Engineering, LangChain, Portfolio, Resume">
+    <meta property="og:title" content="Hiram Ramírez - AI Engineer">
+    <meta property="og:description" content="Building production Python backends, RAG pipelines, and agentic workflows with FastAPI, LLMs, and more.">
+    <meta property="og:image" content="img/pythonFriendOptimized.gif">
+    <meta property="og:url" content="https://hiramramirez.netlify.app/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Hiram Ramírez - Python Backend Developer (AI, Agents & Integrations)</title>
+    <title>Hiram Ramírez - AI Engineer</title>
     <script>
         (function() {
             var theme = localStorage.getItem('theme');
@@ -29,7 +35,7 @@
             <div class="header-content">
                 <h1>
                     <span class="header-name">Hiram Ramírez</span>
-                    <span class="header-role" data-i18n="header_role">Python Backend Developer (AI, Agents & Integrations)</span>
+                    <span class="header-role" data-i18n="header_role">AI Engineer</span>
                 </h1>
                 <div class="header-actions">
                     <button class="lang-toggle" id="langToggle" onclick="toggleLang()" data-i18n-aria="lang_toggle_en">ES</button>
@@ -97,14 +103,11 @@
                             <div class="skill-card">🐘 PostgreSQL</div>
                             <div class="skill-card">🧪 SQLAlchemy</div>
                             <div class="skill-card">🔥 Firebase</div>
-                            <div class="skill-card">☁️ Salesforce Admin</div>
+                            <div class="skill-card">☁️ AWS</div>
                             <div class="skill-card">🐳 Docker</div>
                             <div class="skill-card">⚙️ CI/CD</div>
-                            <div class="skill-card">🚀 Deployment Workflows</div>
                             <div class="skill-card">🔌 API Integrations</div>
                             <div class="skill-card">🌿 Git</div>
-                            <div class="skill-card">🐙 GitHub</div>
-                            <div class="skill-card">🗣️ English C1</div>
                         </div>
                     </div>
                 </div>
@@ -125,15 +128,26 @@
                 <div class="skill-card">🐘 PostgreSQL</div>
                 <div class="skill-card">🧪 SQLAlchemy</div>
                 <div class="skill-card">🔥 Firebase</div>
-                <div class="skill-card">☁️ Salesforce Admin</div>
+                <div class="skill-card">☁️ AWS</div>
                 <div class="skill-card">🐳 Docker</div>
                 <div class="skill-card">⚙️ CI/CD</div>
-                <div class="skill-card">🚀 Deployment Workflows</div>
                 <div class="skill-card">🔌 API Integrations</div>
                 <div class="skill-card">🌿 Git</div>
-                <div class="skill-card">🐙 GitHub</div>
-                <div class="skill-card">🗣️ English C1</div>
             </div>
+        </div>
+    </section>
+
+    <section id="tech-cloud" data-aos="fade-up">
+        <h2>Tech Stack</h2>
+        <div class="tech-cloud">
+            <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="tech-item"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+            <div class="tech-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
+            <div class="tech-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+            <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+            <div class="tech-item"><i class="fas fa-link"></i><span>LangChain</span></div>
+            <div class="tech-item"><i class="fas fa-brain"></i><span>LLMs</span></div>
+            <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
         </div>
     </section>
 
@@ -171,24 +185,85 @@
             independent AI-driven web solutions.</p>
     </section>
 
+    <section id="what-i-do" data-aos="fade-up">
+        <h2 data-i18n="what_i_do_title">What I Do</h2>
+        <div class="what-i-do-grid">
+            <div class="what-i-do-card">
+                <i class="fas fa-robot"></i>
+                <h3 data-i18n="what_i_do_1_title">AI Integration</h3>
+                <p data-i18n="what_i_do_1_desc">Integrate LLM APIs (Gemini, LangChain, Ollama) into production systems serving real users.</p>
+            </div>
+            <div class="what-i-do-card">
+                <i class="fas fa-database"></i>
+                <h3 data-i18n="what_i_do_2_title">RAG Systems</h3>
+                <p data-i18n="what_i_do_2_desc">Build Retrieval-Augmented Generation pipelines with vector stores and document processing.</p>
+            </div>
+            <div class="what-i-do-card">
+                <i class="fas fa-server"></i>
+                <h3 data-i18n="what_i_do_3_title">Backend APIs</h3>
+                <p data-i18n="what_i_do_3_desc">Design and build scalable REST APIs with Python, FastAPI, and PostgreSQL.</p>
+            </div>
+            <div class="what-i-do-card">
+                <i class="fas fa-cogs"></i>
+                <h3 data-i18n="what_i_do_4_title">Intelligent Automation</h3>
+                <p data-i18n="what_i_do_4_desc">Create agentic workflows and spec-driven solutions that optimize complex processes.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="experience" data-aos="fade-up">
         <h2 data-i18n="experience_title">Experience</h2>
         <div class="job">
-            <h3 data-i18n="experience_role">Python Backend Developer (AI & Integrations)</h3>
-            <p data-i18n="experience_company"><strong>Mighty Studio (Mexico)</strong> | November 2022 - June 2026</p>
+            <h3 data-i18n="experience_role_1">AI Pipeline Developer</h3>
+            <p data-i18n="experience_company_1"><strong>Ollin VFX</strong> | July 2026 – Present</p>
             <ul>
-                <li data-i18n="experience_1">Scaled <strong>REST APIs</strong> using <strong>Python</strong>/<strong>FastAPI</strong> for
-                    business-critical internal systems, ensuring high performance and reliability.</li>
-                <li data-i18n="experience_2">Built an automation app that reduced the operational team from <strong>8 to 2 people</strong>,
-                    saving <strong>~$1.4M MXN annually</strong> through intelligent workflow optimization.</li>
-                <li data-i18n="experience_3">Engineered a unique <strong>100% custom integration</strong> embedding <strong>ComfyUI</strong>
-                    into <strong>ShotGrid Desktop</strong> for seamless AI image generation in the production
-                    pipeline.</li>
-                <li data-i18n="experience_4">Implemented <strong>Agentic Engineering</strong> and <strong>spec-driven development</strong> to
-                    optimize complex workflows and direct AI behavior.</li>
-                <li data-i18n="experience_5">Managed production data structures using <strong>PostgreSQL</strong> and
-                    <strong>SQLAlchemy</strong>, ensuring data integrity and scalability.</li>
+                <li data-i18n="experience_1_1">Integrated <strong>LLM-based systems</strong> (<strong>LangChain</strong>, <strong>Ollama</strong>, <strong>ComfyUI</strong>) into production pipelines processing ~1,000 renders/week across 2 studios with 20 active users.</li>
+                <li data-i18n="experience_1_2">Designed intelligent automation using <strong>Agentic Engineering</strong> patterns and <strong>RAG</strong> for complex multi-step production workflows.</li>
+                <li data-i18n="experience_1_3">Implemented <strong>spec-driven development</strong> to optimize production workflows and direct AI behavior.</li>
             </ul>
+        </div>
+        <div class="job">
+            <h3 data-i18n="experience_role_2">Python Developer</h3>
+            <p data-i18n="experience_company_2"><strong>Mighty Studio (Mexico)</strong> | November 2022 – June 2026</p>
+            <ul>
+                <li data-i18n="experience_2_1">Built production <strong>REST APIs</strong> using <strong>Python</strong>/<strong>FastAPI</strong> with 100% uptime across 3+ years of continuous operation.</li>
+                <li data-i18n="experience_2_2">Automated complex workflows, reducing the operational team from <strong>8 to 2 people</strong> and saving <strong>~$1.4M MXN annually</strong>.</li>
+                <li data-i18n="experience_2_3">Managed production data structures using <strong>PostgreSQL</strong> and <strong>SQLAlchemy</strong>, ensuring data integrity and scalability.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="testimonials" data-aos="fade-up">
+        <h2 data-i18n="testimonials_title">What People Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n="testimonial_1_text">Hiram was part of my team at Mighty... an exceptional professional—the kind who leaves a deeply positive impact on both the projects and the team. His work in pipeline and tools development was always flawless.</p>
+                <div class="testimonial-author">
+                    <strong data-i18n="testimonial_1_author">Orlando Esponda</strong>
+                    <span data-i18n="testimonial_1_role">Head of Pipeline — Mighty Studio</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n="testimonial_2_text">Hiram fue mi compañero de trabajo durante 3 años, un muy buen programador pero un mejor, una excelente persona. Excelente manejo de lenguajes de programación e implementación de nuevas tecnologías como IA entre otras.</p>
+                <div class="testimonial-author">
+                    <strong data-i18n="testimonial_2_author">Salvador Andrés Ramírez Sánchez</strong>
+                    <span data-i18n="testimonial_2_role">Pipeline Developer — Mighty Studio</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n="testimonial_3_text">He has shown a great sense of responsibility for what he does and also good professionalism, he's committed to his work and he's very creative when it comes to finding a proper solution to problems. Excellent Developer I highly recommend him.</p>
+                <div class="testimonial-author">
+                    <strong data-i18n="testimonial_3_author">Francisco Sotelo</strong>
+                    <span data-i18n="testimonial_3_role">Web Developer</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text" data-i18n="testimonial_4_text">I had the opportunity to meet and work with Hiram on two Full Stack projects from scratch. He has shown a great sense of responsibility for what he does and also good professionalism. I'll recommend Hiram's job to any person or company.</p>
+                <div class="testimonial-author">
+                    <strong data-i18n="testimonial_4_author">Daniel Magaña</strong>
+                    <span data-i18n="testimonial_4_role">Software Developer — FullStack | AWS | Python</span>
+                </div>
+            </div>
         </div>
     </section>
 
