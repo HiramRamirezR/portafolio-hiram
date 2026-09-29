@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Case study: how I built a private, offline RAG pipeline (LangChain + ChromaDB + Ollama + FastAPI) for question answering over PDF documents.">
+    <meta name="keywords"
+        content="RAG case study, Retrieval-Augmented Generation, LangChain, ChromaDB, Ollama, FastAPI, AI Engineer, Hiram Ramírez">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study — Private document Q&A with a local RAG pipeline">
+    <meta name="twitter:description" content="How I built an offline Retrieval-Augmented Generation API with LangChain, ChromaDB and Ollama.">
+    <meta name="twitter:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
+    <meta property="og:title" content="Case Study — Private document Q&A with a local RAG pipeline">
+    <meta property="og:description" content="An offline RAG pipeline: chunking, embeddings, vector search and grounded answers, all local.">
+    <meta property="og:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://hiramramirez.netlify.app/case-study-rag.html">
+    <meta property="og:site_name" content="Hiram Ramírez — AI Engineer">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://hiramramirez.netlify.app/case-study-rag.html">
+    <meta name="theme-color" content="#121212">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Case Study — RAG Pipeline | Hiram Ramírez - AI Engineer</title>
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Private document Q&A with a local RAG pipeline",
+        "description": "Case study on building an offline Retrieval-Augmented Generation API with LangChain, ChromaDB, Ollama and FastAPI.",
+        "author": {
+            "@type": "Person",
+            "name": "Hiram Ramírez",
+            "url": "https://hiramramirez.netlify.app/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Hiram Ramírez"
+        },
+        "mainEntityOfPage": "https://hiramramirez.netlify.app/case-study-rag.html",
+        "keywords": "RAG, LangChain, ChromaDB, Ollama, FastAPI, LLM"
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#cs-intro" data-i18n-aria="skip_to_content">Skip to main content</a>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 data-i18n="cs_page_title">Case Study</h1>
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle" onclick="toggleLang()" data-i18n-aria="lang_toggle_en">ES</button>
+                    <a href="Hiram%20Ramirez%20CV%20jun%202026.pdf" class="download-btn" download data-i18n-aria="download_cv" title="Download CV (PDF)" onclick="trackEvent('cv_download')">
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Switch to light mode"><i class="fas fa-moon"></i></button>
+                    <button class="hamburger-menu" data-i18n-aria="menu_open" aria-label="Open navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                    <li><a href="projects.html" data-i18n="nav_projects">Projects</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                    <li class="nav-mobile-actions">
+                        <button class="lang-toggle" onclick="toggleLang()" data-i18n-aria="lang_toggle_en">ES</button>
+                        <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+                        <a href="Hiram%20Ramirez%20CV%20jun%202026.pdf" class="download-btn" download onclick="trackEvent('cv_download')">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="cs-intro" data-aos="fade-up">
+        <p class="cs-kicker" data-i18n="cs_kicker">// RAG · LangChain · ChromaDB · Ollama</p>
+        <h2 class="cs-title" data-i18n="cs_title">Private document Q&amp;A with a local RAG pipeline</h2>
+        <p class="cs-subtitle" data-i18n="cs_subtitle">How I built an offline Retrieval-Augmented Generation API — and the decisions that make it production-shaped.</p>
+        <div class="cs-actions">
+            <a href="https://github.com/HiramRamirezR/ollama_rag" target="_blank" class="cta-button"><i class="fab fa-github"></i> <span data-i18n="modal_view_code">View Code</span></a>
+            <a href="projects.html" class="cta-button secondary" data-i18n="cta_cs_all_projects">All projects</a>
+        </div>
+    </section>
+
+    <section id="cs-overview" data-aos="fade-up">
+        <h2 data-i18n="cs_overview_title">Overview</h2>
+        <p data-i18n="cs_overview_text">Ollama RAG is a Python backend that lets a user upload PDF documents and ask questions in natural language. Instead of answering from the model's parametric memory, the system retrieves the most relevant fragments from the document and constrains the answer to them. Everything runs locally: the LLM, the vector store and the documents never leave the machine.</p>
+    </section>
+
+    <section id="cs-problem" data-aos="fade-up">
+        <h2 data-i18n="cs_problem_title">The problem</h2>
+        <p data-i18n="cs_problem_text">Teams accumulate knowledge in PDFs — SOPs, reports, contracts — that general chatbots cannot safely answer from: either the data is not allowed to leave the company, or the model invents details. I wanted a repeatable pattern: a small API that answers questions only from the supplied documents, running on a laptop and deployable on a server without vendor lock-in.</p>
+    </section>
+
+    <section id="cs-goals" data-aos="fade-up">
+        <h2 data-i18n="cs_goals_title">Goals</h2>
+        <ul class="cs-list">
+            <li data-i18n="cs_goal_1">Ground every answer in retrieved document context — no free-form generation.</li>
+            <li data-i18n="cs_goal_2">Run fully local: no API keys, no per-token billing, private by default.</li>
+            <li data-i18n="cs_goal_3">Expose it as a clean REST API so any frontend, script or agent can call it.</li>
+            <li data-i18n="cs_goal_4">Keep the pipeline modular: swapping chunking, embeddings or the LLM must be a small change, not a rewrite.</li>
+        </ul>
+    </section>
+
+    <section id="cs-architecture" data-aos="fade-up">
+        <h2 data-i18n="cs_arch_title">Architecture</h2>
+        <p data-i18n="cs_arch_text">Two paths meet at the vector store: an ingestion path that turns documents into searchable chunks, and a query path that turns a question into a grounded answer.</p>
+
+        <div class="cs-diagram">
+            <svg viewBox="0 0 900 430" role="img" aria-labelledby="diagram-title diagram-desc" preserveAspectRatio="xMidYMid meet">
+                <title id="diagram-title">RAG pipeline architecture</title>
+                <desc id="diagram-desc">Ingestion path: FastAPI, PDF upload, PyPDF parsing, chunking, embeddings, ChromaDB. Query path: similarity search, prompt builder, Ollama LLM, grounded answer returned through the API.</desc>
+                <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#00aaff"></path>
+                    </marker>
+                    <marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#888"></path>
+                    </marker>
+                    <g id="box">
+                        <rect x="0" y="0" width="170" height="64" rx="10" fill="#1f1f1f" stroke="#00aaff" stroke-width="1.5"></rect>
+                    </g>
+                </defs>
+
+                <!-- row 1: ingestion -->
+                <use href="#box" x="40" y="40"></use>
+                <text x="125" y="68" class="dg-label" text-anchor="middle">FastAPI</text>
+                <text x="125" y="88" class="dg-sub" text-anchor="middle">API layer</text>
+
+                <use href="#box" x="250" y="40"></use>
+                <text x="335" y="68" class="dg-label" text-anchor="middle">PDF upload</text>
+                <text x="335" y="88" class="dg-sub" text-anchor="middle">ingest endpoint</text>
+
+                <use href="#box" x="460" y="40"></use>
+                <text x="545" y="68" class="dg-label" text-anchor="middle">PyPDF parse</text>
+                <text x="545" y="88" class="dg-sub" text-anchor="middle">extract text</text>
+
+                <use href="#box" x="670" y="40"></use>
+                <text x="755" y="68" class="dg-label" text-anchor="middle">Chunking</text>
+                <text x="755" y="88" class="dg-sub" text-anchor="middle">size + overlap</text>
+
+                <line x1="210" y1="72" x2="248" y2="72" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+                <line x1="420" y1="72" x2="458" y2="72" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+                <line x1="630" y1="72" x2="668" y2="72" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                <!-- wrap down to row 2 -->
+                <line x1="755" y1="104" x2="755" y2="188" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                <!-- row 2: vectors + retrieval (flows right to left) -->
+                <use href="#box" x="670" y="190"></use>
+                <text x="755" y="218" class="dg-label" text-anchor="middle">Embeddings</text>
+                <text x="755" y="238" class="dg-sub" text-anchor="middle">vectorize chunks</text>
+
+                <use href="#box" x="460" y="190"></use>
+                <text x="545" y="218" class="dg-label" text-anchor="middle">ChromaDB</text>
+                <text x="545" y="238" class="dg-sub" text-anchor="middle">vector store</text>
+
+                <use href="#box" x="250" y="190"></use>
+                <text x="335" y="218" class="dg-label" text-anchor="middle">Retriever</text>
+                <text x="335" y="238" class="dg-sub" text-anchor="middle">similarity · top-k</text>
+
+                <use href="#box" x="40" y="190"></use>
+                <text x="125" y="218" class="dg-label" text-anchor="middle">Prompt builder</text>
+                <text x="125" y="238" class="dg-sub" text-anchor="middle">context + question</text>
+
+                <line x1="668" y1="222" x2="632" y2="222" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+                <line x1="458" y1="222" x2="422" y2="222" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+                <line x1="248" y1="222" x2="212" y2="222" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                <!-- wrap down to row 3 -->
+                <line x1="125" y1="254" x2="125" y2="338" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                <!-- row 3: generation -->
+                <use href="#box" x="40" y="340"></use>
+                <text x="125" y="368" class="dg-label" text-anchor="middle">Ollama LLM</text>
+                <text x="125" y="388" class="dg-sub" text-anchor="middle">local · private</text>
+
+                <use href="#box" x="250" y="340"></use>
+                <text x="335" y="368" class="dg-label" text-anchor="middle">Grounded answer</text>
+                <text x="335" y="388" class="dg-sub" text-anchor="middle">only from context</text>
+
+                <line x1="210" y1="372" x2="248" y2="372" stroke="#00aaff" stroke-width="2" marker-end="url(#arrow)"></line>
+
+                <!-- response path back to the API -->
+                <path d="M 420 372 L 866 372 L 866 20 L 130 20" fill="none" stroke="#888" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow-muted)"></path>
+                <text x="540" y="34" class="dg-sub" text-anchor="middle">response streamed back through the API</text>
+            </svg>
+        </div>
+
+        <p data-i18n="cs_arch_ingest"><strong>Ingestion:</strong> documents are loaded with PyPDF, split into overlapping chunks, embedded into vectors and upserted into ChromaDB.</p>
+        <p data-i18n="cs_arch_query"><strong>Query:</strong> the question runs a similarity search for the top-k chunks, those chunks are injected into the prompt as context, and the LLM answers from that evidence — not from its parametric memory.</p>
+    </section>
+
+    <section id="cs-decisions" data-aos="fade-up">
+        <h2 data-i18n="cs_dec_title">Key decisions</h2>
+        <div class="what-i-do-grid">
+            <div class="what-i-do-card">
+                <i class="fas fa-cut"></i>
+                <h3 data-i18n="cs_dec_1_title">Chunking with overlap</h3>
+                <p data-i18n="cs_dec_1_text">Fixed-size chunks with overlap keep semantic units intact across boundaries: too small loses meaning, too large dilutes relevance and burns context window.</p>
+            </div>
+            <div class="what-i-do-card">
+                <i class="fas fa-bullseye"></i>
+                <h3 data-i18n="cs_dec_2_title">Retrieve, then ground</h3>
+                <p data-i18n="cs_dec_2_text">Top-k chunks go into the prompt and the model is told to answer only from that context — if the context does not contain the answer, it must say so instead of guessing.</p>
+            </div>
+            <div class="what-i-do-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3 data-i18n="cs_dec_3_title">Local model via Ollama</h3>
+                <p data-i18n="cs_dec_3_text">Privacy first: documents and prompts stay on the machine, there is no per-token cost, and the same code runs offline. The model can be swapped without touching the pipeline.</p>
+            </div>
+            <div class="what-i-do-card">
+                <i class="fas fa-layer-group"></i>
+                <h3 data-i18n="cs_dec_4_title">Thin vector-store layer</h3>
+                <p data-i18n="cs_dec_4_text">ChromaDB is embedded and zero-config for document-scale corpora. The interface stays thin so it can be replaced by pgvector when the app moves next to a production Postgres.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cs-results" data-aos="fade-up">
+        <h2 data-i18n="cs_res_title">Results</h2>
+        <ul class="cs-list">
+            <li data-i18n="cs_res_1">Runs end-to-end offline: no API keys, no per-token spend, no data egress.</li>
+            <li data-i18n="cs_res_2">One REST surface (upload + ask) powers a chat UI, a script or an agent tool call.</li>
+            <li data-i18n="cs_res_3">The pipeline became the reference architecture I reuse for client RAG systems.</li>
+        </ul>
+    </section>
+
+    <section id="cs-next" data-aos="fade-up">
+        <h2 data-i18n="cs_next_title">Next steps</h2>
+        <ul class="cs-list">
+            <li data-i18n="cs_next_1"><strong>Retrieval evaluation:</strong> RAGAS-style faithfulness and answer-relevance checks over a golden set of question → context pairs, so changes to chunking cannot silently regress quality.</li>
+            <li data-i18n="cs_next_2"><strong>Hybrid search + reranker:</strong> combine BM25 with vector search to catch exact terms (names, codes, part numbers) that embeddings blur.</li>
+            <li data-i18n="cs_next_3"><strong>Streaming:</strong> SSE responses to cut time-to-first-token and make the chat experience feel immediate.</li>
+            <li data-i18n="cs_next_4"><strong>pgvector + semantic caching:</strong> keep embeddings next to production Postgres and reuse answers for repeated questions to cut latency and cost.</li>
+        </ul>
+    </section>
+
+    <section id="call-to-action" data-aos="zoom-in">
+        <h2 data-i18n="cta_projects_title">Interested in working together?</h2>
+        <a href="contact.html" class="cta-button" data-i18n="cta_projects_contact">Contact Me</a>
+        <a href="projects.html" class="cta-button secondary" data-i18n="cta_projects_more">More projects</a>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/HiramRamirezR" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/hiramramirez" target="_blank" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:hiram.j.ramirez@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; <span id="current-year"></span> - Hiram Ramírez. <span data-i18n="footer_rights">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" title="Go to top" aria-label="Back to top" data-i18n-aria="back_to_top">&#9650;</button>
+
+    <a href="https://wa.me/522221033301" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <noscript>
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/hamburger.js"></script>
+</body>
+
+</html>

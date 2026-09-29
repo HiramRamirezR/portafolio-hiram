@@ -8,18 +8,29 @@
         content="Hiram Ramírez - AI Engineer. Building production Python backends, RAG pipelines, and agentic workflows with FastAPI, LLMs, and more.">
     <meta name="keywords"
         content="Hiram Ramírez, AI Engineer, Python, FastAPI, RAG, LLMs, Agentic Engineering, LangChain, Portfolio, Resume">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hiram Ramírez - AI Engineer">
+    <meta name="twitter:description" content="Hiram Ramírez - AI Engineer. Building production Python backends, RAG pipelines, and agentic workflows with FastAPI, LLMs, and more.">
+    <meta name="twitter:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
     <meta property="og:title" content="Hiram Ramírez - AI Engineer">
     <meta property="og:description" content="Building production Python backends, RAG pipelines, and agentic workflows with FastAPI, LLMs, and more.">
     <meta property="og:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://hiramramirez.netlify.app/">
+    <meta property="og:site_name" content="Hiram Ramírez — AI Engineer">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://hiramramirez.netlify.app/">
+    <meta name="theme-color" content="#121212">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Hiram Ramírez - AI Engineer</title>
     <script>
         (function() {
@@ -29,9 +40,28 @@
             }
         })();
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hiram Ramírez",
+        "jobTitle": "AI Engineer",
+        "url": "https://hiramramirez.netlify.app/",
+        "image": "https://hiramramirez.netlify.app/img/og-cover.png",
+        "email": "hiram.j.ramirez@gmail.com",
+        "description": "AI Engineer with 4+ years building production Python backends, RAG pipelines and agentic workflows.",
+        "knowsAbout": ["Python", "FastAPI", "RAG", "Large Language Models", "LangChain", "Ollama", "ChromaDB", "Agentic workflows", "REST APIs", "PostgreSQL"],
+        "knowsLanguage": ["es", "en"],
+        "sameAs": [
+            "https://github.com/HiramRamirezR",
+            "https://linkedin.com/in/hiramramirez"
+        ]
+    }
+    </script>
 </head>
 
 <body>
+    <a class="skip-link" href="#intro-section" data-i18n-aria="skip_to_content">Skip to main content</a>
     <header>
         <div class="container">
             <div class="header-content">
@@ -45,7 +75,7 @@
                         <i class="fas fa-download"></i>
                     </a>
                     <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Switch to light mode"><i class="fas fa-moon"></i></button>
-                    <button class="hamburger-menu" aria-label="Open navigation menu">
+                    <button class="hamburger-menu" data-i18n-aria="menu_open" aria-label="Open navigation menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -56,7 +86,7 @@
                     <li><a href="projects.html" data-i18n="nav_projects">Projects</a></li>
                     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                     <li class="nav-mobile-actions">
-                        <button class="lang-toggle" onclick="toggleLang()">ES</button>
+                        <button class="lang-toggle" onclick="toggleLang()" data-i18n-aria="lang_toggle_en">ES</button>
                         <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
                         <a href="Hiram%20Ramirez%20CV%20jun%202026.pdf" class="download-btn" download onclick="trackEvent('cv_download')">
                             <i class="fas fa-download"></i>
@@ -71,8 +101,11 @@
         <div id="intro-skills" data-aos="zoom-in">
             <div id="intro-header">
                 <div class="image-container">
-                    <img class="profile-image" src="img/pythonFriendOptimized.gif" alt="Me with my python pet"
-                        width="320" height="240" fetchpriority="high" data-aos="fade-up">
+                    <picture>
+                        <source srcset="img/pythonFriend.webp" type="image/webp">
+                        <img class="profile-image" src="img/pythonFriendOptimized.gif" alt="Me with my python pet"
+                            width="320" height="240" fetchpriority="high" data-aos="fade-up">
+                    </picture>
                 </div>
                 <div class="subtitle-container">
                     <pre class="subtitle" id="animated-subtitle"><span class="syntax-number">4+</span> years of experience in <span class="syntax-keyword">Python</span>. Building <span class="syntax-keyword">RAG</span> pipelines, <span class="syntax-keyword">LLM</span> apps and agentic workflows.
@@ -334,6 +367,7 @@
     <section id="call-to-action" data-aos="zoom-in">
         <h2 data-i18n="cta_index_title">Ready to see my work?</h2>
         <a href="projects.html" class="cta-button" data-i18n="cta_index_projects">View My Projects</a>
+        <a href="case-study-rag.html" class="cta-button secondary" data-i18n="cta_index_case_study">Read the RAG case study</a>
         <a href="contact.html" class="cta-button secondary" data-i18n="cta_index_contact">Contact Me</a>
     </section>
 
@@ -350,13 +384,21 @@
     </div>
 </footer>
 
-    <button id="backToTopBtn" title="Go to top">&#9650;</button>
+    <button id="backToTopBtn" title="Go to top" aria-label="Back to top" data-i18n-aria="back_to_top">&#9650;</button>
 
     <a href="https://wa.me/522221033301" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <noscript>
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
     <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
     <script src="js/writingEffect.js"></script>

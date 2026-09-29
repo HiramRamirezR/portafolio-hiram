@@ -22,9 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = button.dataset.filter;
 
             // Deactivate all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
             // Activate the clicked button
             button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
 
             projects.forEach(project => {
                 // Obtiene todos los filtros del proyecto desde su atributo data-filter

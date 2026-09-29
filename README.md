@@ -25,6 +25,10 @@ PostgreSQL · SQLAlchemy · Firebase · AWS · Docker · CI/CD · Git · Netlify
 - **Leazro** — Commercial platform for digital event invitations in production ([leazro.com](https://leazro.com/)), monetized with Stripe and powered by the Gemini API.
 - **Moon's Forest (EdTech)** — Full platform for a children's English learning app: FastAPI + PostgreSQL, subscriptions via Stripe, in pilot use with real students.
 
+## Case study
+
+- **[Private document Q&A with a local RAG pipeline](https://hiramramirez.netlify.app/case-study-rag.html)** — the problem, an architecture diagram of the ingestion/query paths, the chunking · retrieval · grounding decisions, what shipped, and the next steps (retrieval evals, hybrid search + reranker, streaming, pgvector).
+
 ## Experience
 
 - **AI Pipeline Developer — Ollin VFX** (Jul 2026 – Present): LLM systems (LangChain, Ollama, ComfyUI) integrated into production pipelines processing ~1,000 renders/week across 2 studios, with RAG and agentic patterns for multi-step workflows.

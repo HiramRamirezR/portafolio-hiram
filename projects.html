@@ -8,18 +8,30 @@
         content="Hiram Ramírez's portfolio projects, including AI-driven systems, RAG pipelines, and production backends in Python/FastAPI.">
     <meta name="keywords"
         content="Hiram Ramírez, AI Engineer, Python Projects, FastAPI, RAG, LLMs, Agentic Engineering, Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hiram Ramírez - AI Engineer - Projects">
+    <meta name="twitter:description" content="Hiram Ramírez's portfolio projects, including AI-driven systems, RAG pipelines, and production backends in Python/FastAPI.">
+    <meta name="twitter:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
     <meta property="og:title" content="Hiram Ramírez - AI Engineer - Projects">
     <meta property="og:description" content="AI-driven systems, RAG pipelines, and production backends in Python/FastAPI.">
     <meta property="og:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://hiramramirez.netlify.app/projects.html">
+    <meta property="og:site_name" content="Hiram Ramírez — AI Engineer">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://hiramramirez.netlify.app/projects.html">
+    <meta name="theme-color" content="#121212">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" integrity="sha384-/rJKQnzOkEo+daG0jMjU1IwwY9unxt1NBw3Ef2fmOJ3PW/TfAg2KXVoWwMZQZtw9" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous" referrerpolicy="no-referrer">
     <title>Hiram Ramírez - AI Engineer - Projects</title>
     <script>
         (function() {
@@ -32,6 +44,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#projects" data-i18n-aria="skip_to_content">Skip to main content</a>
     <header>
         <div class="container">
             <div class="header-content">
@@ -42,7 +55,7 @@
                         <i class="fas fa-download"></i>
                     </a>
                     <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle" aria-label="Switch to light mode"><i class="fas fa-moon"></i></button>
-                    <button class="hamburger-menu" aria-label="Open navigation menu">
+                    <button class="hamburger-menu" data-i18n-aria="menu_open" aria-label="Open navigation menu">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -52,7 +65,7 @@
                     <li><a href="index.html" data-i18n="nav_home">Home</a></li>
                     <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                     <li class="nav-mobile-actions">
-                        <button class="lang-toggle" onclick="toggleLang()">ES</button>
+                        <button class="lang-toggle" onclick="toggleLang()" data-i18n-aria="lang_toggle_en">ES</button>
                         <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
                         <a href="Hiram%20Ramirez%20CV%20jun%202026.pdf" class="download-btn" download onclick="trackEvent('cv_download')">
                             <i class="fas fa-download"></i>
@@ -83,6 +96,7 @@
                 data-title-es="💬 Ollama RAG"
                 data-img-src="img/ollama_rag.png"
                 data-github-url="https://github.com/HiramRamirezR/ollama_rag"
+                data-case-study-url="case-study-rag.html"
                 data-subtitle="Upload PDFs, ask questions, get answers grounded in your documents."
                 data-subtitle-es="Sube PDFs, haz preguntas y obtén respuestas fundamentadas en tus documentos."
                 data-description="Built a Retrieval-Augmented Generation (RAG) backend: LangChain orchestrates the full pipeline (load → chunk → embed → retrieve → generate) with a local Ollama LLM and a ChromaDB vector store, exposed through a Python API. Users upload PDFs and ask questions in natural language; the model answers using only the retrieved context."
@@ -224,7 +238,7 @@
                 data-filter="full-stack javascript html-css firebase stripe netlify commercial ai-ml"
                 data-title="✨ Leazro"
                 data-title-es="✨ Leazro"
-                data-img-src="img/leazro.png"
+                data-img-src="img/leazro.webp"
                 data-live-url="https://leazro.com/"
                 data-subtitle="A monetized platform for digital event invitations."
                 data-subtitle-es="Una plataforma monetizada para invitaciones digitales."
@@ -238,7 +252,7 @@
                 data-impact-es="En producción en leazro.com con clientes que pagan: generación de contenido con IA y cobros con Stripe en marcha."
                 >
                 <h3>✨ Leazro</h3>
-                <img class="project-image" src="img/leazro.png" alt="Leazro Project" width="700" height="300" loading="lazy" decoding="async">
+                <img class="project-image" src="img/leazro.webp" alt="Leazro Project" width="700" height="300" loading="lazy" decoding="async">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">JavaScript</span>
@@ -253,7 +267,7 @@
                 data-filter="full-stack python fastapi postgresql stripe commercial"
                 data-title="🌙 Moon's forest (EdTech)"
                 data-title-es="🌙 Moon's forest (EdTech)"
-                data-img-src="img/moonsforest.png"
+                data-img-src="img/moonsforest.webp"
                 data-subtitle="Complete web platform for a children's English learning app."
                 data-subtitle-es="Plataforma web completa para una app infantil de aprendizaje de inglés."
                 data-description="Built the complete web platform for a children's English learning application. Handles user registration, subscription payments via Stripe, and progress tracking. Currently used in a pilot version for real student testing."
@@ -266,7 +280,7 @@
                 data-impact-es="En uso piloto con estudiantes reales, con suscripciones y progreso rastreados mediante un backend FastAPI en producción."
                 >
                 <h3>🌙 Moon's forest (EdTech)</h3>
-                <img class="project-image" src="img/moonsforest.png" alt="Moon's Forest Project" width="700" height="300" loading="lazy" decoding="async">
+                <img class="project-image" src="img/moonsforest.webp" alt="Moon's Forest Project" width="700" height="300" loading="lazy" decoding="async">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">Python</span>
@@ -280,7 +294,7 @@
                 data-filter="web-design commercial"
                 data-title="🎨 Web Design & Development"
                 data-title-es="🎨 Diseño y Desarrollo Web"
-                data-img-src="img/global.png"
+                data-img-src="img/global.webp"
                 data-subtitle="Modern, responsive websites for real clients — from immigration services to Montessori schools."
                 data-subtitle-es="Sitios web modernos y responsivos para clientes reales — desde servicios migratorios hasta escuelas Montessori."
                 data-description="I design and build modern, responsive websites for businesses and professionals. Each project is crafted with a focus on clean UI, intuitive navigation, and mobile-first design — ensuring every client gets a site that truly represents their brand and connects with their audience."
@@ -297,9 +311,9 @@
                 <span class="web-design-badge" data-i18n="filter_web">Web Design</span>
                 <h3>🎨 Web Design & Development</h3>
                 <div class="project-carousel" data-carousel>
-                    <img class="project-image" src="img/global.png" alt="Global Mobility Puebla" data-carousel-img width="700" height="300" loading="lazy" decoding="async">
-                    <button class="carousel-btn carousel-prev" data-carousel-prev>&lsaquo;</button>
-                    <button class="carousel-btn carousel-next" data-carousel-next>&rsaquo;</button>
+                    <img class="project-image" src="img/global.webp" alt="Global Mobility Puebla" data-carousel-img width="700" height="300" loading="lazy" decoding="async">
+                    <button class="carousel-btn carousel-prev" data-carousel-prev aria-label="Previous image" data-i18n-aria="carousel_prev">&lsaquo;</button>
+                    <button class="carousel-btn carousel-next" data-carousel-next aria-label="Next image" data-i18n-aria="carousel_next">&rsaquo;</button>
                     <div class="carousel-dots" data-carousel-dots></div>
                 </div>
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
@@ -315,16 +329,12 @@
         </div>
     </section>
 
-    <div id="project-modal" class="modal">
+    <div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <button class="close-button" aria-label="Close dialog">&times;</button>
             <h2 id="modal-title"></h2>
             <p id="modal-subtitle"></p>
             <div id="modal-tags"></div>
-            <div id="modal-impact-section" style="display: none;">
-                <h3 data-i18n="modal_impact">Impact & Results</h3>
-                <p id="modal-impact"></p>
-            </div>
             <div id="modal-architecture-section">
                 <h3 data-i18n="modal_architecture">Architecture & Decisions</h3>
                 <p id="modal-architecture"></p>
@@ -337,7 +347,12 @@
                 <h3 data-i18n="modal_challenges">Challenges & Learnings</h3>
                 <p id="modal-challenges"></p>
             </div>
+            <div id="modal-impact-section" style="display: none;">
+                <h3 data-i18n="modal_impact">Impact & Results</h3>
+                <p id="modal-impact"></p>
+            </div>
             <div class="project-buttons">
+                <a id="modal-casestudy" href="" class="project-button" style="display: none;"><i class="fas fa-book-open"></i> <span data-i18n="modal_view_case_study">Read the case study</span></a>
                 <a id="modal-github" href="" target="_blank" class="project-button"><i class="fab fa-github"></i> <span data-i18n="modal_view_code">View Code</span></a>
                 <a id="modal-live" href="" target="_blank" class="project-button"><i class="fas fa-external-link-alt"></i> <span data-i18n="modal_view_project">View Project</span></a>
             </div>
@@ -363,7 +378,7 @@
         </div>
     </footer>
 
-    <button id="backToTopBtn" title="Go to top">&#9650;</button>
+    <button id="backToTopBtn" title="Go to top" aria-label="Back to top" data-i18n-aria="back_to_top">&#9650;</button>
 
     <a href="https://wa.me/522221033301" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -372,7 +387,15 @@
     <script src="js/i18n.js"></script>
     <script src="js/projectFilter.js"></script>
     <script src="js/hamburger.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <noscript>
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script src="js/modal.js"></script>
 </body>
