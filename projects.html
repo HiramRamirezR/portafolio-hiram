@@ -13,7 +13,7 @@
     <meta name="twitter:description" content="Hiram Ramírez's portfolio projects, including AI-driven systems, RAG pipelines, and production backends in Python/FastAPI.">
     <meta name="twitter:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
     <meta property="og:title" content="Hiram Ramírez - AI Engineer - Projects">
-    <meta property="og:description" content="AI-driven systems, RAG pipelines, and production backends in Python/FastAPI.">
+    <meta property="og:description" content="Selected production work: RAG pipelines, LLM-powered backends in Python/FastAPI, agentic tools and client web platforms.">
     <meta property="og:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -104,7 +104,7 @@
                 data-architecture="Documents are loaded with PyPDF, split into overlapping chunks, and embedded into vectors stored in ChromaDB. At query time the system runs similarity search for top-k chunks and injects them into the prompt as context, so the LLM is constrained to the retrieved evidence instead of its parametric memory. Running Ollama locally keeps the whole stack offline-capable and private: no API keys, no per-token costs, no data leaving the machine."
                 data-architecture-es="Los documentos se cargan con PyPDF, se dividen en fragmentos superpuestos y se vectorizan en ChromaDB. En cada consulta se hace búsqueda de similitud (top-k) y los fragmentos se inyectan en el prompt como contexto, de modo que el LLM está limitado a la evidencia recuperada y no a su memoria paramétrica. Ejecutar Ollama localmente mantiene todo el stack sin conexión y privado: sin claves de API, sin costos por token y sin que los datos salgan de la máquina."
                 data-challenges="Tuning chunk size and overlap against the model's context window was the core trade-off: chunks too small lose meaning, chunks too large dilute relevance and cost tokens. On top of that, retrieval quality (top-k, similarity threshold) and prompt grounding were the levers used to reduce irrelevant context and keep answers grounded in the source."
-                data-challenges-es="Ajustar el tamaño y solapamiento de los fragmentos contra la ventana de contexto del modelo fue el trade-off central: fragmentos muy pequeños pierden significado y muy grandes diluyen la relevancia. Sobre eso, la calidad de recuperación (top-k, umbral de similitud) y el anclaje del prompt fueron las palcas para reducir contexto irrelevante y mantener las respuestas ancladas a la fuente."
+                data-challenges-es="Ajustar el tamaño y solapamiento de los fragmentos contra la ventana de contexto del modelo fue el trade-off central: fragmentos muy pequeños pierden significado y muy grandes diluyen la relevancia. Sobre eso, la calidad de recuperación (top-k, umbral de similitud) y el anclaje del prompt fueron las palancas para reducir contexto irrelevante y mantener las respuestas ancladas a la fuente."
                 data-impact="Runs 100% local: no API keys, no per-token cost, private by design. This is the reference architecture I reuse for client RAG systems."
                 data-impact-es="Corre 100% local: sin claves de API, sin costo por token y privado por diseño. Es la arquitectura de referencia que reutilizo en sistemas RAG para clientes."
                 >

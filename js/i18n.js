@@ -23,13 +23,13 @@ const i18n = {
     experience_2_3: "Managed production data structures using <strong>PostgreSQL</strong> and <strong>SQLAlchemy</strong>, ensuring data integrity and scalability.",
     education_title: "Education",
     edu_1_title: "Fullstack Rails Developer",
-    edu_1_info: "Le Wagon | July 2022 - September 2022",
+    edu_1_info: "Le Wagon | July 2022 – September 2022",
     edu_1_desc: "Intensive 9-week bootcamp focused on building web applications with Ruby on Rails, covering backend development, database design, and API integration.",
     edu_2_title: "Fullstack MERN Developer",
-    edu_2_info: "Kodemia | August 2021 - April 2022",
+    edu_2_info: "Kodemia | August 2021 – April 2022",
     edu_2_desc: "Comprehensive program on the MERN stack (MongoDB, Express.js, React, Node.js), developing full-stack web applications and RESTful APIs.",
     edu_3_title: "3D Character Animation",
-    edu_3_info: "Universidad de Artes Digitales | January 2011 - December 2013",
+    edu_3_info: "Universidad de Artes Digitales | January 2011 – December 2013",
     edu_3_desc: "Specialized in 3D character animation, gaining proficiency in Maya software and understanding its integration into production pipelines.",
     languages_title: "Languages",
     lang_1: "Spanish: Native proficiency",
@@ -138,7 +138,7 @@ const i18n = {
     testimonial_1_text: "Hiram was part of my team at Mighty... an exceptional professional—the kind who leaves a deeply positive impact on both the projects and the team. His work in pipeline and tools development was always flawless.",
     testimonial_1_author: "Orlando Esponda",
     testimonial_1_role: "Head of Pipeline — Mighty Studio",
-    testimonial_2_text: "Hiram fue mi compañero de trabajo durante 3 años, un muy buen programador pero un mejor, una excelente persona. Excelente manejo de lenguajes de programación e implementación de nuevas tecnologías como IA entre otras.",
+    testimonial_2_text: "Hiram worked alongside me for 3 years — a very good programmer and an even better person. Excellent command of programming languages, and quick to adopt new technologies such as AI and others.",
     testimonial_2_author: "Salvador Andrés Ramírez Sánchez",
     testimonial_2_role: "Pipeline Developer — Mighty Studio",
     testimonial_3_text: "He has shown a great sense of responsibility for what he does and also good professionalism, he's committed to his work and he's very creative when it comes to finding a proper solution to problems. Excellent Developer I highly recommend him.",
@@ -322,11 +322,11 @@ function applyTranslations() {
     el.setAttribute('aria-label', t(el.dataset.i18nAria));
   });
 
-  const toggle = document.getElementById('langToggle');
-  if (toggle) {
-    toggle.textContent = currentLang === 'en' ? 'ES' : 'EN';
-    toggle.setAttribute('aria-label', currentLang === 'en' ? 'Switch to Spanish' : 'Cambiar a Inglés');
-  }
+  const langLabel = t(currentLang === 'en' ? 'lang_toggle_en' : 'lang_toggle_es');
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.textContent = currentLang === 'en' ? 'ES' : 'EN';
+    btn.setAttribute('aria-label', langLabel);
+  });
 
   document.documentElement.lang = currentLang;
 }
