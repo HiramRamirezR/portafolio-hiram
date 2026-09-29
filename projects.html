@@ -10,11 +10,13 @@
         content="Hiram Ramírez, AI Engineer, Python Projects, FastAPI, RAG, LLMs, Agentic Engineering, Portfolio">
     <meta property="og:title" content="Hiram Ramírez - AI Engineer - Projects">
     <meta property="og:description" content="AI-driven systems, RAG pipelines, and production backends in Python/FastAPI.">
-    <meta property="og:image" content="img/pythonFriendOptimized.gif">
+    <meta property="og:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://hiramramirez.netlify.app/projects.html">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://hiramramirez.netlify.app/projects.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -76,29 +78,174 @@
         <div class="projects-grid">
 
             <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="python langchain chromadb ollama rag llm backend-only ai-ml"
+                data-title="💬 Ollama RAG"
+                data-title-es="💬 Ollama RAG"
+                data-img-src="img/ollama_rag.png"
+                data-github-url="https://github.com/HiramRamirezR/ollama_rag"
+                data-subtitle="Upload PDFs, ask questions, get answers grounded in your documents."
+                data-subtitle-es="Sube PDFs, haz preguntas y obtén respuestas fundamentadas en tus documentos."
+                data-description="Built a Retrieval-Augmented Generation (RAG) backend: LangChain orchestrates the full pipeline (load → chunk → embed → retrieve → generate) with a local Ollama LLM and a ChromaDB vector store, exposed through a Python API. Users upload PDFs and ask questions in natural language; the model answers using only the retrieved context."
+                data-description-es="Desarrollé un backend de RAG (Retrieval-Augmented Generation): LangChain orquesta el pipeline completo (cargar → dividir → vectorizar → recuperar → generar) con un LLM local de Ollama y un almacén vectorial ChromaDB, expuesto mediante una API en Python. El usuario sube PDFs y pregunta en lenguaje natural; el modelo responde usando solo el contexto recuperado."
+                data-architecture="Documents are loaded with PyPDF, split into overlapping chunks, and embedded into vectors stored in ChromaDB. At query time the system runs similarity search for top-k chunks and injects them into the prompt as context, so the LLM is constrained to the retrieved evidence instead of its parametric memory. Running Ollama locally keeps the whole stack offline-capable and private: no API keys, no per-token costs, no data leaving the machine."
+                data-architecture-es="Los documentos se cargan con PyPDF, se dividen en fragmentos superpuestos y se vectorizan en ChromaDB. En cada consulta se hace búsqueda de similitud (top-k) y los fragmentos se inyectan en el prompt como contexto, de modo que el LLM está limitado a la evidencia recuperada y no a su memoria paramétrica. Ejecutar Ollama localmente mantiene todo el stack sin conexión y privado: sin claves de API, sin costos por token y sin que los datos salgan de la máquina."
+                data-challenges="Tuning chunk size and overlap against the model's context window was the core trade-off: chunks too small lose meaning, chunks too large dilute relevance and cost tokens. On top of that, retrieval quality (top-k, similarity threshold) and prompt grounding were the levers used to reduce irrelevant context and keep answers grounded in the source."
+                data-challenges-es="Ajustar el tamaño y solapamiento de los fragmentos contra la ventana de contexto del modelo fue el trade-off central: fragmentos muy pequeños pierden significado y muy grandes diluyen la relevancia. Sobre eso, la calidad de recuperación (top-k, umbral de similitud) y el anclaje del prompt fueron las palcas para reducir contexto irrelevante y mantener las respuestas ancladas a la fuente."
+                data-impact="Runs 100% local: no API keys, no per-token cost, private by design. This is the reference architecture I reuse for client RAG systems."
+                data-impact-es="Corre 100% local: sin claves de API, sin costo por token y privado por diseño. Es la arquitectura de referencia que reutilizo en sistemas RAG para clientes."
+                >
+                <h3>💬 Ollama RAG</h3>
+                <img class="project-image" src="img/ollama_rag.png" alt="Ollama RAG project card" width="700" height="300" loading="lazy" decoding="async">
+                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
+                <div class="project-tags">
+                    <span class="tag">LangChain</span>
+                    <span class="tag">ChromaDB</span>
+                    <span class="tag">Ollama</span>
+                    <span class="tag">RAG</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="python fastapi hugging-face streamlit nlp llm backend-only ai-ml"
+                data-title="🤖 AI Comments Generator"
+                data-title-es="🤖 Generador de Comentarios con IA"
+                data-img-src="img/ai_comments.png"
+                data-github-url="https://github.com/HiramRamirezR/AI-comments-generator"
+                data-subtitle="A fine-tuned Hugging Face model served behind a FastAPI backend."
+                data-subtitle-es="Un modelo fine-tuneado de Hugging Face servido detrás de un backend FastAPI."
+                data-description="Backend for an AI social media tool: a FastAPI service takes a post topic as input and returns generated comments from a fine-tuned Hugging Face language model. A Streamlit UI was built for rapid testing and prompt iteration before shipping changes to the API."
+                data-description-es="Backend para una herramienta de redes sociales con IA: un servicio FastAPI recibe el tema de una publicación y devuelve comentarios generados por un modelo de lenguaje fine-tuneado de Hugging Face. Se construyó una UI en Streamlit para pruebas rápidas e iteración de prompts antes de llevar cambios a la API."
+                data-architecture="Classic model-serving architecture: FastAPI exposes the model through a REST endpoint while the model is loaded once at startup to avoid cold costs per request. Streamlit sits next to it as a fast inspection layer. Fine-tuning was applied to push the base model toward coherent, on-topic comments instead of generic text."
+                data-architecture-es="Arquitectura clásica de servido de modelos: FastAPI expone el modelo mediante un endpoint REST y el modelo se carga una sola vez al arrancar para no pagar costo frío por petición. Streamlit funciona como capa rápida de inspección. Se aplicó fine-tuning para orientar el modelo base hacia comentarios coherentes y pertinentes en lugar de texto genérico."
+                data-challenges="The main challenge was fine-tuning the model to stay on topic across many subjects, and keeping inference fast enough for an interactive API. Moving from a notebook experiment to a production service forced decisions around model warm-up, request timeouts and error handling."
+                data-challenges-es="El reto principal fue fine-tunear el modelo para mantenerse en el tema en muchos sujetos distintos, y mantener la inferencia suficientemente rápida para una API interactiva. Pasar de un experimento en notebook a un servicio en producción obligó a decidir sobre calentamiento del modelo, timeouts y manejo de errores."
+                data-impact="End-to-end path from a fine-tuned NLP model to a deployed API — the workflow I reuse for every LLM feature I ship."
+                data-impact-es="Camino completo de un modelo NLP fine-tuneado a una API desplegada — el flujo que reutilizo en cada feature de LLM que envío a producción."
+                >
+                <h3>🤖 AI Comments Generator</h3>
+                <img class="project-image" src="img/ai_comments.png" alt="AI Comments Generator project card" width="700" height="300" loading="lazy" decoding="async">
+                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
+                <div class="project-tags">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Hugging Face</span>
+                    <span class="tag">Fine-tuning</span>
+                    <span class="tag">Streamlit</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="python fastapi sqlmodel sqlite pyside2 nlp llm backend-only ai-ml"
+                data-title="AI-Powered Task Manager"
+                data-title-es="Gestor de Tareas con IA"
+                data-img-src="img/task_manager.png"
+                data-github-url="https://github.com/HiramRamirezR/task_manager_AI_NLP"
+                data-subtitle="A desktop app that turns plain sentences into structured tasks."
+                data-subtitle-es="Una app de escritorio que convierte frases simples en tareas estructuradas."
+                data-description="Backend for a desktop task manager. A FastAPI service exposes the CRUD API, SQLModel handles data modeling against SQLite, and an NLP pipeline parses natural language input so the user can create a task by typing a sentence instead of filling a form."
+                data-description-es="Backend para un gestor de tareas de escritorio. Un servicio FastAPI expone la API CRUD, SQLModel maneja el modelado de datos sobre SQLite y un pipeline de NLP analiza lenguaje natural para que el usuario cree una tarea escribiendo una frase en lugar de llenar un formulario."
+                data-architecture="Client-server design with a Python FastAPI backend and a native PySide2 (Qt) desktop client. SQLModel was chosen because it merges Pydantic validation with SQLAlchemy persistence, so request payloads and DB rows share one schema. SQLite keeps the app portable: no external database or cloud dependency for the core flow."
+                data-architecture-es="Diseño cliente-servidor con backend FastAPI en Python y cliente de escritorio nativo con PySide2 (Qt). Se eligió SQLModel porque combina validación de Pydantic con persistencia de SQLAlchemy, así que los payloads y las filas de la BD comparten un esquema. SQLite mantiene la app portátil: sin BD externa ni dependencia cloud en el flujo central."
+                data-challenges="Mapping free-form language into structured task fields without a heavyweight model, and designing an API contract that a non-browser desktop client can consume cleanly (auth, errors, offline behavior)."
+                data-challenges-es="Mapear lenguaje libre a campos estructurados de tarea sin un modelo pesado, y diseñar un contrato de API que un cliente de escritorio (no navegador) consuma de forma limpia: autenticación, errores y comportamiento offline."
+                data-impact="Local NLP inside a real desktop workflow — the parsing step runs on the machine, with no cloud call in the core path."
+                data-impact-es="NLP local dentro de un flujo real de escritorio — el paso de análisis corre en la máquina, sin llamadas cloud en el flujo central."
+                >
+                <h3>📝 AI Task Manager</h3>
+                <img class="project-image" src="img/task_manager.png" alt="AI Task Manager project card" width="700" height="300" loading="lazy" decoding="async">
+                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
+                <div class="project-tags">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">SQLModel</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">PySide2</span>
+                    <span class="tag">Python</span>
+                </div>
+            </div>
+
+            <div class="project project-highlight" data-aos="zoom-in"
+                data-filter="python pytest llm cli automation ai-ml backend-only"
+                data-title="🎓 AI Career Coach"
+                data-title-es="🎓 AI Career Coach"
+                data-img-src="img/becomesenior.png"
+                data-github-url="https://github.com/HiramRamirezR/becomesenior"
+                data-subtitle="Analyzes real job postings and builds a ranked, task-by-task learning path."
+                data-subtitle-es="Analiza vacantes reales y construye un plan de estudio ordenado, tarea por tarea."
+                data-description="CLI tool that ingests real job postings, extracts the technologies they mention, ranks them by demand, and computes the gap between what the market asks and my current level. It then generates a study plan: a topic, a syllabus with progress tracking, and tasks that must pass a pytest suite before being marked complete."
+                data-description-es="Herramienta CLI que ingiere vacantes reales, extrae las tecnologías que mencionan, las ordena por demanda y calcula el hueco entre lo que pide el mercado y mi nivel actual. Después genera un plan de estudio: un tema, un temario con progreso y tareas que deben pasar una suite de pytest antes de marcarse como completas."
+                data-architecture="A Python package installed with `pip install -e .` The analysis core is deterministic and works with zero AI: it counts technology mentions, scores demand × skill gap, and writes a readable `estado.py` with the current state. Study tasks ship as code with `???` placeholders verified by pytest. An LLM (Groq) is plugged in only as an optional grader for solutions — if there is no key, the self-assessment path still works."
+                data-architecture-es="Un paquete Python instalado con `pip install -e .` El núcleo de análisis es determinista y funciona sin IA: cuenta menciones de tecnologías, calcula demanda × hueco de nivel y escribe un `estado.py` legible con el estado actual. Las tareas llegan como código con placeholders `???` verificados por pytest. Un LLM (Groq) se conecta solo como calificador opcional de soluciones — si no hay clave, la ruta de autoevaluación sigue funcionando."
+                data-challenges="Turning a fuzzy question ('what should I study next?') into a measurable ranking, and keeping the product honest when AI is unavailable: the LLM is an optional grader, never the engine. Designing tasks that fail loudly under pytest so progress can't be faked."
+                data-challenges-es="Convertir una pregunta difusa ('¿qué estudio ahora?') en un ranking medible, y mantener el producto útil cuando no hay IA: el LLM es solo un calificador opcional, nunca el motor. Diseñar tareas que fallen de forma clara bajo pytest para que el progreso no se pueda falsear."
+                data-impact="Test-driven study workflow: every completed task is a passing pytest suite. 100% functional with no AI configured."
+                data-impact-es="Flujo de estudio con tests: cada tarea completada es una suite de pytest que pasa. 100% funcional sin configurar IA."
+                >
+                <h3>🎓 AI Career Coach</h3>
+                <img class="project-image" src="img/becomesenior.png" alt="AI Career Coach project card" width="700" height="300" loading="lazy" decoding="async">
+                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">pytest</span>
+                    <span class="tag">LLM</span>
+                    <span class="tag">CLI</span>
+                </div>
+            </div>
+
+            <div class="project" data-aos="zoom-in"
+                data-filter="javascript gemini firebase netlify image-gen ai-ml full-stack"
+                data-title="🚗 Activación IA"
+                data-title-es="🚗 Activación IA"
+                data-img-src="img/activacion_ia.png"
+                data-github-url="https://github.com/HiramRamirezR/activacion-ia"
+                data-subtitle="Gemini image generation for car listings, served serverless."
+                data-subtitle-es="Generación de imágenes con Gemini para catálogos de autos, servida serverless."
+                data-description="AI image generation tool for vehicle listings: the user sends a photo of a car and a Netlify Function calls Gemini's image model to produce enhanced output, which is then stored in Firebase and linked back to the vehicle record."
+                data-description-es="Herramienta de generación de imágenes con IA para catálogos de vehículos: el usuario envía una foto de un auto y una Netlify Function llama al modelo de imágenes de Gemini, cuyo resultado se guarda en Firebase y se vincula al registro del vehículo."
+                data-architecture="Static frontend → Netlify Function (serverless) → Google Gemini image model (`gemini-2.5-flash-image`). The function receives the image as base64, validates mime type and size, calls the model with `@google/genai`, and persists the result through the Firebase Admin SDK to Storage and Firestore. The API key lives only in environment variables, so it never reaches the browser."
+                data-architecture-es="Frontend estático → Netlify Function (serverless) → modelo de imágenes de Gemini (`gemini-2.5-flash-image`). La función recibe la imagen en base64, valida tipo mime y tamaño, llama al modelo con `@google/genai` y persiste el resultado vía Firebase Admin SDK en Storage y Firestore. La clave de API vive solo en variables de entorno, así que nunca llega al navegador."
+                data-challenges="Handling image payloads safely on the server (size, mime type, base64 decoding) while keeping the key server-side, and writing generated assets back into an existing catalog without breaking references."
+                data-challenges-es="Manejar payloads de imagen de forma segura en el servidor (tamaño, mime, decodificación base64) manteniendo la clave del lado del servidor, y escribir los assets generados de vuelta en el catálogo existente sin romper referencias."
+                data-impact="Serverless AI image pipeline in production: key never exposed to the client, generated assets stored in Firebase."
+                data-impact-es="Pipeline serverless de imágenes con IA en producción: la clave nunca se expone al cliente y los assets generados se guardan en Firebase."
+                >
+                <h3>🚗 Activación IA</h3>
+                <img class="project-image" src="img/activacion_ia.png" alt="Activación IA project card" width="700" height="300" loading="lazy" decoding="async">
+                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
+                <div class="project-tags">
+                    <span class="tag">Gemini</span>
+                    <span class="tag">Firebase</span>
+                    <span class="tag">Netlify Functions</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+            </div>
+
+            <div class="project project-highlight" data-aos="zoom-in"
                 data-filter="full-stack javascript html-css firebase stripe netlify commercial ai-ml"
                 data-title="✨ Leazro"
                 data-title-es="✨ Leazro"
-                data-subtitle="A monetized platform for digital event invitations."
-                data-subtitle-es="Una plataforma monetizada para invitaciones digitales."
                 data-img-src="img/leazro.png"
                 data-live-url="https://leazro.com/"
+                data-subtitle="A monetized platform for digital event invitations."
+                data-subtitle-es="Una plataforma monetizada para invitaciones digitales."
                 data-description="Leazro is a commercial web application in production, designed for creating and managing digital event invitations. It serves a recurring client base and is fully monetized through Stripe. Integrated Google Gemini API for AI-driven content generation and built automation tools for invitation workflows."
                 data-description-es="Leazro es una aplicación web comercial en producción para crear y gestionar invitaciones digitales. Tiene una base de clientes recurrentes y está monetizada con Stripe. Integra la API de Google Gemini para generación de contenido impulsada por IA y herramientas de automatización."
                 data-architecture="The architecture is based on the JAMstack approach, with a static frontend built with HTML/CSS/JavaScript and a serverless backend using Netlify Functions for business logic, such as creating Stripe payment sessions. Firebase is used as a BaaS for real-time data storage. The Google Gemini API powers AI-driven invitation content generation."
                 data-architecture-es="La arquitectura usa JAMstack con frontend estático (HTML/CSS/JS) y backend serverless con Netlify Functions para lógica de negocio como sesiones de pago Stripe. Firebase se usa como BaaS para almacenamiento en tiempo real. La API de Google Gemini impulsa la generación de contenido."
                 data-challenges="The main technical challenge was the secure integration of the Stripe payment gateway to handle recurring payments and the implementation of webhooks for reliable payment confirmation. Another key challenge was designing and scaling a flexible Firebase data structure that supports a wide variety of event customizations for a growing client base. Integrating the Gemini API for reliable content generation also required careful prompt engineering."
                 data-challenges-es="El principal reto fue la integración segura de Stripe para pagos recurrentes con webhooks. Otro desafío fue diseñar una estructura flexible en Firebase que soporte diversas personalizaciones para una base de clientes en crecimiento. La integración de Gemini API también requirió ingeniería de prompts cuidadosa."
+                data-impact="Live at leazro.com with paying customers: AI content generation and Stripe billing running in production."
+                data-impact-es="En producción en leazro.com con clientes que pagan: generación de contenido con IA y cobros con Stripe en marcha."
                 >
                 <h3>✨ Leazro</h3>
-                <img class="project-image" src="img/leazro.png" alt="Leazro Project">
+                <img class="project-image" src="img/leazro.png" alt="Leazro Project" width="700" height="300" loading="lazy" decoding="async">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">JavaScript</span>
                     <span class="tag">Firebase</span>
                     <span class="tag">Stripe</span>
-                    <span class="tag">Netlify</span>
                     <span class="tag">Gemini API</span>
+                    <span class="tag">Netlify</span>
                 </div>
             </div>
 
@@ -115,9 +262,11 @@
                 data-architecture-es="El backend está construido con Python y FastAPI, con PostgreSQL para persistencia. La plataforma gestiona autenticación, ciclo de vida de suscripciones y seguimiento de progreso a través de una API RESTful."
                 data-challenges="The main challenge was designing a scalable subscription payment system with Stripe integration that handles different plan tiers and recurring billing. Managing student progress tracking across multiple learning modules also required careful data modeling."
                 data-challenges-es="El principal reto fue diseñar un sistema de suscripciones escalable con Stripe que maneje diferentes planes y facturación recurrente. El seguimiento de progreso estudiantil a través de múltiples módulos también requirió modelado cuidadoso."
+                data-impact="In pilot use with real students, with subscriptions and progress tracked through a production FastAPI backend."
+                data-impact-es="En uso piloto con estudiantes reales, con suscripciones y progreso rastreados mediante un backend FastAPI en producción."
                 >
                 <h3>🌙 Moon's forest (EdTech)</h3>
-                <img class="project-image" src="img/moonsforest.png" alt="Moon's Forest Project">
+                <img class="project-image" src="img/moonsforest.png" alt="Moon's Forest Project" width="700" height="300" loading="lazy" decoding="async">
                 <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
                 <div class="project-tags">
                     <span class="tag">Python</span>
@@ -128,7 +277,7 @@
             </div>
 
             <div class="project project-web-design" data-aos="zoom-in"
-                data-filter="web-design"
+                data-filter="web-design commercial"
                 data-title="🎨 Web Design & Development"
                 data-title-es="🎨 Diseño y Desarrollo Web"
                 data-img-src="img/global.png"
@@ -140,13 +289,15 @@
                 data-architecture-es="Cada sitio se construye con enfoque mobile-first usando HTML semántico, CSS moderno y JavaScript vanilla para interactividad. Alojado en Netlify para entrega rápida y confiable con despliegue continuo."
                 data-challenges="The main challenge is translating each client's unique brand identity into a clean, functional web design. Finding the right balance between visual appeal, usability, and performance requires careful planning and iteration with each client."
                 data-challenges-es="El principal reto es traducir la identidad única de cada cliente en un diseño web limpio y funcional. Encontrar el equilibrio entre atractivo visual, usabilidad y rendimiento requiere planeación cuidadosa e iteración con cada cliente."
+                data-impact="4 client sites delivered and live: immigration services, physiotherapy clinic, accounting firm and a Montessori school."
+                data-impact-es="4 sitios para clientes entregados y en línea: servicios migratorios, clínica de fisioterapia, despacho contable y una escuela Montessori."
                 data-clients='[{"name": "Global Mobility Puebla", "url": "https://globalmobilitypuebla.netlify.app/", "description": "Immigration & consular services"}, {"name": "Quiromed", "url": "https://quiromed.netlify.app/", "description": "Physiotherapy & wellness clinic"}, {"name": "Encinas y Asociados", "url": "https://encinasyasociados.netlify.app/", "description": "Accounting firm"}, {"name": "Educación para la Vida", "url": "https://educacionparalavida.netlify.app/", "description": "Montessori school"}]'
                 data-clients-es='[{"name": "Global Mobility Puebla", "url": "https://globalmobilitypuebla.netlify.app/", "description": "Servicios migratorios y consulares"}, {"name": "Quiromed", "url": "https://quiromed.netlify.app/", "description": "Clínica de fisioterapia y bienestar"}, {"name": "Encinas y Asociados", "url": "https://encinasyasociados.netlify.app/", "description": "Despacho contable"}, {"name": "Educación para la Vida", "url": "https://educacionparalavida.netlify.app/", "description": "Escuela Montessori"}]'
                 >
                 <span class="web-design-badge" data-i18n="filter_web">Web Design</span>
                 <h3>🎨 Web Design & Development</h3>
                 <div class="project-carousel" data-carousel>
-                    <img class="project-image" src="img/global.png" alt="Global Mobility Puebla" data-carousel-img>
+                    <img class="project-image" src="img/global.png" alt="Global Mobility Puebla" data-carousel-img width="700" height="300" loading="lazy" decoding="async">
                     <button class="carousel-btn carousel-prev" data-carousel-prev>&lsaquo;</button>
                     <button class="carousel-btn carousel-next" data-carousel-next>&rsaquo;</button>
                     <div class="carousel-dots" data-carousel-dots></div>
@@ -161,74 +312,6 @@
                 </div>
             </div>
 
-            <div class="project project-highlight" data-aos="zoom-in"
-                data-filter="fastapi python sqlmodel sqlite pyside2 nlp backend-only ai-ml"
-                data-title="AI-Powered Task Manager"
-                data-title-es="Gestor de Tareas con IA"
-                data-img-src="https://via.placeholder.com/350x150"
-                data-github-url="https://github.com/HiramRamirezR/task_manager_AI_NLP"
-                data-description="Designed and built the backend for a desktop task manager. The backend, built with FastAPI, provides a RESTful API for all CRUD operations. I used SQLModel for data modeling and interaction with a SQLite database. A key feature is the integration of a Natural Language Processing (NLP) model to allow task creation from simple sentences."
-                data-description-es="Diseñé y construí el backend para un gestor de tareas de escritorio. El backend con FastAPI proporciona una API RESTful para operaciones CRUD. Usé SQLModel para modelado de datos con SQLite. Una característica clave es la integración de un modelo de NLP para crear tareas desde frases simples."
-                data-architecture="This project uses a client-server architecture, with a Python backend (FastAPI) and a native desktop client with PySide2 (Qt). SQLModel was chosen for its modern integration of Pydantic and SQLAlchemy, simplifying database interaction and ensuring data validation. The use of a local SQLite database makes the application portable and easy to install."
-                data-architecture-es="Arquitectura cliente-servidor con backend Python (FastAPI) y cliente de escritorio nativo con PySide2 (Qt). SQLModel se eligió por su integración moderna de Pydantic y SQLAlchemy. El uso de SQLite local hace la aplicación portátil y fácil de instalar."
-                data-challenges="The most interesting challenge was integrating the NLP model into the API flow to interpret natural language and convert it into structured tasks. Establishing smooth communication between the desktop client and FastAPI backend was a great opportunity to learn about designing APIs for non-browser applications."
-                data-challenges-es="El reto más interesante fue integrar el modelo NLP en el flujo de la API para interpretar lenguaje natural y convertirlo en tareas estructuradas. Establecer comunicación fluida entre el cliente de escritorio y FastAPI fue una gran oportunidad para diseñar APIs para aplicaciones no-web.">
-                <h3>📝 AI Task Manager</h3>
-                <img class="project-image" src="https://via.placeholder.com/350x150" alt="AI-Powered Task Manager">
-                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
-                <div class="project-tags">
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">SQLModel</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">NLP</span>
-                </div>
-            </div>
-
-            <div class="project project-highlight" data-aos="zoom-in"
-                data-filter="langchain chromadb ollama pypdf python backend-only ai-ml" data-title="Ollama RAG"
-                data-title-es="💬 Ollama RAG"
-                data-img-src="img/ollama_rag.gif" data-github-url="https://github.com/HiramRamirezR/ollama_rag"
-                data-description="Developed a Python-based backend for a Retrieval-Augmented Generation (RAG) system. The backend uses LangChain to orchestrate the interaction between a local Ollama language model and a ChromaDB vector store. It exposes an API that allows users to upload PDF documents and ask questions about their content."
-                data-description-es="Desarrollé un backend Python para un sistema RAG (Retrieval-Augmented Generation). Usa LangChain para orquestar la interacción entre un modelo Ollama local y ChromaDB como almacén de vectores. Expone una API para subir PDFs y hacer preguntas sobre su contenido."
-                data-architecture="The architecture focuses on privacy and control, using Ollama to run language models locally, avoiding dependency on third-party APIs. LangChain orchestrates the RAG pipeline, from loading documents with PyPDF to managing ChromaDB. This combination enables rapid experimentation and a robust, modular RAG system."
-                data-architecture-es="La arquitectura se enfoca en privacidad y control, usando Ollama para ejecutar modelos localmente sin depender de APIs externas. LangChain orquesta el pipeline RAG, desde cargar documentos con PyPDF hasta gestionar ChromaDB. Esta combinación permite experimentación rápida y un sistema RAG modular y robusto."
-                data-challenges="The main challenge was optimizing the chunking process and embedding generation to ensure relevant context retrieval. This project was fundamental to gaining practical experience with RAG architecture, running LLMs locally, and understanding how LLM, Vector Store, and Embeddings interact to create an intelligent document chat system."
-                data-challenges-es="El principal reto fue optimizar el chunking y la generación de embeddings para una recuperación de contexto relevante. Este proyecto fue fundamental para obtener experiencia práctica con arquitectura RAG, ejecución local de LLMs y la interacción entre LLM, Vector Store y Embeddings.">
-                <h3>💬 Ollama RAG</h3>
-                <img class="project-image" src="img/ollama_rag.gif" alt="Ollama RAG GIF">
-                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
-                <div class="project-tags">
-                    <span class="tag">LangChain</span>
-                    <span class="tag">ChromaDB</span>
-                    <span class="tag">Ollama</span>
-                    <span class="tag">Python</span>
-                </div>
-            </div>
-
-            <div class="project project-highlight" data-aos="zoom-in"
-                data-filter="python fastapi streamlit hugging-face pytorch backend-only ai-ml"
-                data-title="AI Comments Generator"
-                data-title-es="Generador de Comentarios con IA"
-                data-img-src="img/AI.gif"
-                data-github-url="https://github.com/HiramRamirezR/AI-comments-generator"
-                data-description="Built the backend for an AI-powered social media tool. The backend, developed with FastAPI, serves a Hugging Face language model. It provides an API that takes a post's topic as input and generates relevant comments using the model."
-                data-description-es="Construí el backend para una herramienta de redes sociales impulsada por IA. El backend con FastAPI sirve un modelo de Hugging Face. Proporciona una API que recibe un tema como entrada y genera comentarios relevantes usando el modelo."
-                data-architecture="The architecture is a classic example of serving a Machine Learning model. FastAPI creates a robust backend exposing the model through a REST API. Streamlit was chosen for the UI, enabling rapid visualization and testing of the model with minimal code."
-                data-architecture-es="La arquitectura es un ejemplo clásico de servir un modelo de ML. FastAPI crea un backend robusto que expone el modelo mediante una API REST. Streamlit se eligió para la UI, permitiendo visualización y pruebas rápidas del modelo con código mínimo."
-                data-challenges="The main challenge was fine-tuning the Hugging Face model to generate coherent comments for different topics. Optimizing inference speed for quick API responses was also crucial. This project taught me the complete workflow of putting an NLP model into production."
-                data-challenges-es="El principal reto fue el fine-tuning del modelo de Hugging Face para generar comentarios coherentes. Optimizar la velocidad de inferencia también fue crucial. Este proyecto me enseñó el flujo completo de llevar un modelo NLP a producción.">
-                <h3>🤖 AI Comments Generator</h3>
-                <img class="project-image" src="img/AI.gif" alt="AI Comments Generator GIF">
-                <button class="project-button details-button" data-i18n="modal_view_details"><i class="fas fa-eye"></i> View Details</button>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Streamlit</span>
-                    <span class="tag">Hugging Face</span>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -238,6 +321,10 @@
             <h2 id="modal-title"></h2>
             <p id="modal-subtitle"></p>
             <div id="modal-tags"></div>
+            <div id="modal-impact-section" style="display: none;">
+                <h3 data-i18n="modal_impact">Impact & Results</h3>
+                <p id="modal-impact"></p>
+            </div>
             <div id="modal-architecture-section">
                 <h3 data-i18n="modal_architecture">Architecture & Decisions</h3>
                 <p id="modal-architecture"></p>

@@ -1,6 +1,14 @@
 // Analytics tracking
 const API = '/api/track';
 
+function hideVisitsMetric() {
+  const el = document.querySelector('[data-metric="visits"]');
+  if (el) {
+    const card = el.closest('.metric-card');
+    if (card) card.style.display = 'none';
+  }
+}
+
 async function trackVisit() {
   try {
     const res = await fetch(API, {
@@ -8,13 +16,18 @@ async function trackVisit() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ type: 'pageview' })
     });
+    if (!res.ok) throw new Error('track failed');
     const data = await res.json();
     const el = document.querySelector('[data-metric="visits"]');
-    if (el && data.monthlyCount !== undefined) {
+    if (el && typeof data.monthlyCount === 'number') {
       el.dataset.count = data.monthlyCount;
       el.textContent = data.monthlyCount;
+    } else {
+      hideVisitsMetric();
     }
-  } catch (e) {}
+  } catch (e) {
+    hideVisitsMetric();
+  }
 }
 
 async function trackEvent(eventName) {
@@ -29,6 +42,11 @@ async function trackEvent(eventName) {
 
 // Auto-update footer year
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Seamless skills marquee: duplicate each track so the -50% loop has no gap
+document.querySelectorAll('.skills-track').forEach(track => {
+  Array.from(track.children).forEach(item => track.appendChild(item.cloneNode(true)));
+});
 
 AOS.init();
 

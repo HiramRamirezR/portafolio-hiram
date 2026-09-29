@@ -10,11 +10,13 @@
         content="Hiram Ramírez, AI Engineer, Python, FastAPI, RAG, LLMs, Agentic Engineering, LangChain, Portfolio, Resume">
     <meta property="og:title" content="Hiram Ramírez - AI Engineer">
     <meta property="og:description" content="Building production Python backends, RAG pipelines, and agentic workflows with FastAPI, LLMs, and more.">
-    <meta property="og:image" content="img/pythonFriendOptimized.gif">
+    <meta property="og:image" content="https://hiramramirez.netlify.app/img/og-cover.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://hiramramirez.netlify.app/">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://hiramramirez.netlify.app/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -70,13 +72,14 @@
             <div id="intro-header">
                 <div class="image-container">
                     <img class="profile-image" src="img/pythonFriendOptimized.gif" alt="Me with my python pet"
-                        data-aos="fade-up">
+                        width="320" height="240" fetchpriority="high" data-aos="fade-up">
                 </div>
                 <div class="subtitle-container">
-                    <pre class="subtitle" id="animated-subtitle"><span class="syntax-number">4+</span> years of experience in <span class="syntax-keyword">Python</span>. Bilingual (<span class="syntax-string">Spanish</span>-<span class="syntax-string">English</span>).
+                    <pre class="subtitle" id="animated-subtitle"><span class="syntax-number">4+</span> years of experience in <span class="syntax-keyword">Python</span>. Building <span class="syntax-keyword">RAG</span> pipelines, <span class="syntax-keyword">LLM</span> apps and agentic workflows.
+                        Bilingual (<span class="syntax-string">Spanish</span>-<span class="syntax-string">English</span>).
                         Open to
                         <span class="syntax-comment">remote work</span>
-                        opportunities.</>
+                        opportunities.</pre>
                 </div>
             </div>
             <h2>Skills</h2>
@@ -84,55 +87,79 @@
                 <div class="skills-carousel">
                     <div class="skills-row">
                         <div class="skills-track">
-                            <div class="skill-card">🐍 Python</div>
-                            <div class="skill-card">🚀 FastAPI</div>
-                            <div class="skill-card">✨ Pydantic</div>
-                            <div class="skill-card">🌐 REST APIs</div>
-                            <div class="skill-card">📋 Spec-Driven Dev</div>
-                            <div class="skill-card">🤖 Agentic Engineering</div>
+                            <span class="skill-group-label">LLM &amp; Agents</span>
                             <div class="skill-card">🧠 LLMs</div>
-                            <div class="skill-card">📎 RAG</div>
                             <div class="skill-card">⛓️ LangChain</div>
+                            <div class="skill-card">📎 RAG</div>
+                            <div class="skill-card">🗄️ ChromaDB</div>
                             <div class="skill-card">🦙 Ollama</div>
                             <div class="skill-card">🔮 Gemini</div>
+                            <div class="skill-card">🤗 Hugging Face</div>
+                            <div class="skill-card">📝 Prompt Engineering</div>
+                            <div class="skill-card">🤖 Agentic Workflows</div>
                             <div class="skill-card">🎨 ComfyUI</div>
                         </div>
                     </div>
                     <div class="skills-row">
                         <div class="skills-track">
+                            <span class="skill-group-label">Backend &amp; AI Eng</span>
+                            <div class="skill-card">🐍 Python</div>
+                            <div class="skill-card">🚀 FastAPI</div>
+                            <div class="skill-card">✨ Pydantic</div>
+                            <div class="skill-card">🌐 REST APIs</div>
+                            <div class="skill-card">🧪 SQLModel</div>
                             <div class="skill-card">🐘 PostgreSQL</div>
-                            <div class="skill-card">🧪 SQLAlchemy</div>
-                            <div class="skill-card">🔥 Firebase</div>
-                            <div class="skill-card">☁️ AWS</div>
-                            <div class="skill-card">🐳 Docker</div>
-                            <div class="skill-card">⚙️ CI/CD</div>
+                            <div class="skill-card">⚗️ pytest</div>
+                            <div class="skill-card">📋 Spec-Driven Dev</div>
                             <div class="skill-card">🔌 API Integrations</div>
+                        </div>
+                    </div>
+                    <div class="skills-row">
+                        <div class="skills-track">
+                            <span class="skill-group-label">Cloud &amp; Delivery</span>
+                            <div class="skill-card">🐳 Docker</div>
+                            <div class="skill-card">☁️ AWS</div>
+                            <div class="skill-card">⚙️ CI/CD</div>
+                            <div class="skill-card">🔥 Firebase</div>
+                            <div class="skill-card">💳 Stripe</div>
                             <div class="skill-card">🌿 Git</div>
+                            <div class="skill-card">▲ Netlify</div>
+                            <div class="skill-card">✅ Testing</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="skills-grid-mobile">
+                <div class="skill-group-label">LLM &amp; Agents</div>
+                <div class="skill-card">🧠 LLMs</div>
+                <div class="skill-card">⛓️ LangChain</div>
+                <div class="skill-card">📎 RAG</div>
+                <div class="skill-card">🗄️ ChromaDB</div>
+                <div class="skill-card">🦙 Ollama</div>
+                <div class="skill-card">🔮 Gemini</div>
+                <div class="skill-card">🤗 Hugging Face</div>
+                <div class="skill-card">📝 Prompt Eng.</div>
+                <div class="skill-card">🤖 Agentic</div>
+                <div class="skill-card">🎨 ComfyUI</div>
+                <div class="skill-group-label">Backend &amp; AI Eng</div>
                 <div class="skill-card">🐍 Python</div>
                 <div class="skill-card">🚀 FastAPI</div>
                 <div class="skill-card">✨ Pydantic</div>
                 <div class="skill-card">🌐 REST APIs</div>
-                <div class="skill-card">📋 Spec-Driven Dev</div>
-                <div class="skill-card">🤖 Agentic Engineering</div>
-                <div class="skill-card">🧠 LLMs</div>
-                <div class="skill-card">📎 RAG</div>
-                <div class="skill-card">⛓️ LangChain</div>
-                <div class="skill-card">🦙 Ollama</div>
-                <div class="skill-card">🔮 Gemini</div>
-                <div class="skill-card">🎨 ComfyUI</div>
+                <div class="skill-card">🧪 SQLModel</div>
                 <div class="skill-card">🐘 PostgreSQL</div>
-                <div class="skill-card">🧪 SQLAlchemy</div>
-                <div class="skill-card">🔥 Firebase</div>
-                <div class="skill-card">☁️ AWS</div>
+                <div class="skill-card">⚗️ pytest</div>
+                <div class="skill-card">📋 Spec-Driven</div>
+                <div class="skill-card">🔌 Integrations</div>
+                <div class="skill-group-label">Cloud &amp; Delivery</div>
                 <div class="skill-card">🐳 Docker</div>
+                <div class="skill-card">☁️ AWS</div>
                 <div class="skill-card">⚙️ CI/CD</div>
-                <div class="skill-card">🔌 API Integrations</div>
+                <div class="skill-card">🔥 Firebase</div>
+                <div class="skill-card">💳 Stripe</div>
                 <div class="skill-card">🌿 Git</div>
+                <div class="skill-card">▲ Netlify</div>
+                <div class="skill-card">✅ Testing</div>
             </div>
         </div>
     </section>
@@ -142,11 +169,14 @@
         <div class="tech-cloud">
             <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
             <div class="tech-item"><i class="fas fa-bolt"></i><span>FastAPI</span></div>
+            <div class="tech-item"><i class="fas fa-brain"></i><span>LLMs</span></div>
+            <div class="tech-item"><i class="fas fa-link"></i><span>LangChain</span></div>
+            <div class="tech-item"><i class="fas fa-book"></i><span>RAG</span></div>
+            <div class="tech-item"><i class="fas fa-layer-group"></i><span>ChromaDB</span></div>
+            <div class="tech-item"><i class="fas fa-robot"></i><span>Ollama</span></div>
             <div class="tech-item"><i class="fas fa-database"></i><span>PostgreSQL</span></div>
             <div class="tech-item"><i class="fab fa-aws"></i><span>AWS</span></div>
             <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
-            <div class="tech-item"><i class="fas fa-link"></i><span>LangChain</span></div>
-            <div class="tech-item"><i class="fas fa-brain"></i><span>LLMs</span></div>
             <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
         </div>
     </section>
@@ -179,10 +209,7 @@
 
     <section id="profile" data-aos="fade-up">
         <h2 data-i18n="profile_title">Profile</h2>
-        <p data-i18n="profile_text">Python backend developer with <strong>4+ years</strong> of experience in scalable APIs and
-            <strong>Agentic Engineering</strong>. Specialized in custom automations that drive efficiency, achieving
-            <strong>~$1.4M MXN annual savings</strong> through intelligent workflow optimization. Currently building
-            independent AI-driven web solutions.</p>
+        <p data-i18n="profile_text">AI Engineer with <strong>4+ years</strong> building production Python backends, <strong>RAG pipelines</strong>, and <strong>agentic workflows</strong>. Experienced in integrating LLM APIs (Gemini, LangChain) and deploying intelligent automation systems serving real users. Specialized in custom automations that drive efficiency, achieving <strong>~$1.4M MXN in annual savings</strong>.</p>
     </section>
 
     <section id="what-i-do" data-aos="fade-up">
@@ -190,13 +217,13 @@
         <div class="what-i-do-grid">
             <div class="what-i-do-card">
                 <i class="fas fa-robot"></i>
-                <h3 data-i18n="what_i_do_1_title">AI Integration</h3>
-                <p data-i18n="what_i_do_1_desc">Integrate LLM APIs (Gemini, LangChain, Ollama) into production systems serving real users.</p>
+                <h3 data-i18n="what_i_do_1_title">LLM Applications</h3>
+                <p data-i18n="what_i_do_1_desc">Integrate LLMs (Gemini, Ollama, Hugging Face) into production systems: prompt engineering, structured output and reliable API delivery.</p>
             </div>
             <div class="what-i-do-card">
                 <i class="fas fa-database"></i>
                 <h3 data-i18n="what_i_do_2_title">RAG Systems</h3>
-                <p data-i18n="what_i_do_2_desc">Build Retrieval-Augmented Generation pipelines with vector stores and document processing.</p>
+                <p data-i18n="what_i_do_2_desc">Build RAG pipelines end to end: chunking, embeddings, vector search (ChromaDB) and answers grounded in real documents.</p>
             </div>
             <div class="what-i-do-card">
                 <i class="fas fa-server"></i>
@@ -205,8 +232,8 @@
             </div>
             <div class="what-i-do-card">
                 <i class="fas fa-cogs"></i>
-                <h3 data-i18n="what_i_do_4_title">Intelligent Automation</h3>
-                <p data-i18n="what_i_do_4_desc">Create agentic workflows and spec-driven solutions that optimize complex processes.</p>
+                <h3 data-i18n="what_i_do_4_title">Agentic Workflows</h3>
+                <p data-i18n="what_i_do_4_desc">Design multi-step agentic workflows and tool-using assistants with LangChain, guided by spec-driven development.</p>
             </div>
         </div>
     </section>

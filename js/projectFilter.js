@@ -11,11 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 count++;
             }
         });
-        if (count === 1) {
-            projectCountElement.textContent = `${count} project`;
-        } else {
-            projectCountElement.textContent = `${count} projects`;
-        }
+        const label = (typeof t === 'function')
+            ? t(count === 1 ? 'project_count_one' : 'project_count_many')
+            : (count === 1 ? 'project' : 'projects');
+        projectCountElement.textContent = `${count} ${label}`;
     }
 
     filterButtons.forEach(button => {

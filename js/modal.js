@@ -18,13 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalChallengesSection = document.getElementById('modal-challenges-section');
     const modalClients = document.getElementById('modal-clients');
     const modalClientsList = document.getElementById('modal-clients-list');
+    const modalImpact = document.getElementById('modal-impact');
+    const modalImpactSection = document.getElementById('modal-impact-section');
     const modalGithub = document.getElementById('modal-github');
     const modalLive = document.getElementById('modal-live');
     const closeButton = document.querySelector('.close-button');
+    let openProject = null;
 
     function openModal(projectDiv) {
+        openProject = projectDiv;
         modalTitle.textContent = getProjectData(projectDiv, 'title');
         modalSubtitle.textContent = getProjectData(projectDiv, 'subtitle');
+
+        const impactText = getProjectData(projectDiv, 'impact');
+        if (impactText && impactText.trim()) {
+            modalImpact.textContent = impactText;
+            modalImpactSection.style.display = 'block';
+        } else {
+            modalImpactSection.style.display = 'none';
+        }
 
         const archText = getProjectData(projectDiv, 'architecture');
         if (archText && archText.trim()) {
@@ -150,22 +162,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('languageChanged', () => {
-        if (modal.style.display === 'block') {
-            const openProject = document.querySelector('.project .details-button:focus');
-            if (openProject) {
-                const projectDiv = openProject.closest('.project');
-                if (projectDiv) openModal(projectDiv);
-            }
+        if (modal.style.display === 'block' && openProject) {
+            openModal(openProject);
         }
     });
 
-    closeButton.addEventListener('click', () => {
+    function closeModal() {
         modal.style.display = 'none';
+        openProject = null;
+    }
+
+    closeButton.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
     });
 
     window.addEventListener('click', (e) => {
         if (e.target == modal) {
-            modal.style.display = 'none';
+            closeModal();
         }
     });
 });
